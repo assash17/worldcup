@@ -6,25 +6,43 @@ interface MatchDetailViewProps {
   match: ParsedMatch;
 }
 
-function GoalList({ goals }: { goals: GoalEvent[] }) {
-  if (goals.length === 0) {
+function GoalList({
+  goals,
+  teamScore,
+  played,
+}: {
+  goals: GoalEvent[];
+  teamScore: number | null;
+  played: boolean;
+}) {
+  if (goals.length > 0) {
+    return (
+      <ul className="space-y-1">
+        {goals.map((goal, index) => (
+          <li key={`${goal.name}-${goal.minute}-${index}`} className="text-sm">
+            <span className="font-medium">{goal.name}</span>
+            <span className="text-gray-500">
+              {" "}
+              {goal.minute}&apos;
+              {goal.penalty ? " (pen)" : ""}
+              {goal.owngoal ? " (og)" : ""}
+            </span>
+          </li>
+        ))}
+      </ul>
+    );
+  }
+
+  if (!played || teamScore === null) {
+    return <p className="text-sm text-gray-400">—</p>;
+  }
+
+  if (teamScore === 0) {
     return <p className="text-sm text-gray-400">No goals</p>;
   }
 
   return (
-    <ul className="space-y-1">
-      {goals.map((goal, index) => (
-        <li key={`${goal.name}-${goal.minute}-${index}`} className="text-sm">
-          <span className="font-medium">{goal.name}</span>
-          <span className="text-gray-500">
-            {" "}
-            {goal.minute}&apos;
-            {goal.penalty ? " (pen)" : ""}
-            {goal.owngoal ? " (og)" : ""}
-          </span>
-        </li>
-      ))}
-    </ul>
+    <p className="text-sm text-gray-400">Scorer data not available</p>
   );
 }
 
@@ -143,13 +161,21 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
           <h3 className="mb-3 font-semibold text-gray-700">
             <TeamName team={match.home} flagSize={20} />
           </h3>
-          <GoalList goals={match.goalsHome} />
+          <GoalList
+            goals={match.goalsHome}
+            teamScore={match.homeScore}
+            played={match.played}
+          />
         </div>
         <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
           <h3 className="mb-3 font-semibold text-gray-700">
             <TeamName team={match.away} flagSize={20} />
           </h3>
-          <GoalList goals={match.goalsAway} />
+          <GoalList
+            goals={match.goalsAway}
+            teamScore={match.awayScore}
+            played={match.played}
+          />
         </div>
       </div>
     </div>
