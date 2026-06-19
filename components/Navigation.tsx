@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname, useSearchParams } from "next/navigation";
+import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { YearSelector } from "./YearSelector";
 import { formatWorldCupShort } from "@/lib/openfootball/hosts";
@@ -14,6 +14,7 @@ const links = [
 
 function NavigationContent() {
   const pathname = usePathname();
+  const router = useRouter();
   const searchParams = useSearchParams();
   const year = parseYearParam(searchParams.get("year"));
 
@@ -22,7 +23,7 @@ function NavigationContent() {
   const onYearChange = (nextYear: WorldCupYear) => {
     const params = new URLSearchParams(searchParams.toString());
     params.set("year", String(nextYear));
-    window.location.href = `${pathname}?${params.toString()}`;
+    router.push(`${pathname}?${params.toString()}`);
   };
 
   return (
