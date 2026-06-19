@@ -9,6 +9,8 @@ interface TeamFlagProps {
   className?: string;
 }
 
+const FLAG_SHADOW = "shadow-[0_0_0_1px_rgba(0,0,0,0.06),0_1px_2px_rgba(0,0,0,0.1)]";
+
 function FlagPlaceholder({
   size,
   className,
@@ -18,7 +20,7 @@ function FlagPlaceholder({
 }) {
   return (
     <span
-      className={`inline-flex shrink-0 items-center justify-center rounded-sm bg-gray-100 text-[10px] font-medium text-gray-400 ${className}`}
+      className={`inline-flex shrink-0 items-center justify-center bg-gray-100 text-[10px] font-medium text-gray-400 ${FLAG_SHADOW} ${className}`}
       style={{ width: Math.round(size * 1.5), height: size }}
       aria-hidden
     >
@@ -49,7 +51,7 @@ export function TeamFlag({ team, size = 20, className = "" }: TeamFlagProps) {
       decoding="async"
       referrerPolicy="no-referrer"
       onError={() => setFailed(true)}
-      className={`inline-block shrink-0 rounded-sm object-cover shadow-sm ${className}`}
+      className={`inline-block shrink-0 object-cover ${FLAG_SHADOW} ${className}`}
     />
   );
 }
