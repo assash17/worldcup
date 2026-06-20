@@ -76,12 +76,20 @@ function getWinner(
   away: string,
   homeScore: number | null,
   awayScore: number | null,
+  etHomeScore: number | null,
+  etAwayScore: number | null,
   homePenalties: number | null,
   awayPenalties: number | null,
 ): string | null {
   if (homeScore === null || awayScore === null) return null;
   if (homeScore > awayScore) return home;
   if (awayScore > homeScore) return away;
+
+  if (etHomeScore !== null && etAwayScore !== null) {
+    if (etHomeScore > etAwayScore) return home;
+    if (etAwayScore > etHomeScore) return away;
+  }
+
   if (homePenalties !== null && awayPenalties !== null) {
     if (homePenalties > awayPenalties) return home;
     if (awayPenalties > homePenalties) return away;
@@ -124,6 +132,8 @@ function buildMatch(
       raw.team2,
       scores.homeScore,
       scores.awayScore,
+      scores.etHomeScore,
+      scores.etAwayScore,
       scores.homePenalties,
       scores.awayPenalties,
     ),

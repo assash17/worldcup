@@ -45,7 +45,7 @@ export function MatchList({ matches, year, compact = false }: MatchListProps) {
                 href={getMatchHref(year, match.id)}
                 className="flex items-center justify-between rounded-md border border-gray-200 bg-white px-3 py-2 transition hover:border-[var(--wc-green)] hover:bg-green-50"
               >
-                <TeamName team={match.home} align="right" flagSize={compact ? 14 : 18} className="flex-1" />
+                <TeamName team={match.home} align="right" flagSize={compact ? 14 : 18} className="flex-1" link />
                 <span className="mx-2 min-w-16 text-center font-bold text-[var(--wc-green)]">
                   {formatScoreDisplay(
                     match.homeScore,
@@ -53,7 +53,7 @@ export function MatchList({ matches, year, compact = false }: MatchListProps) {
                     match.played,
                   )}
                 </span>
-                <TeamName team={match.away} align="left" flagSize={compact ? 14 : 18} className="flex-1" />
+                <TeamName team={match.away} align="left" flagSize={compact ? 14 : 18} className="flex-1" link />
               </Link>
             ))}
           </div>

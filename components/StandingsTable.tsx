@@ -89,7 +89,7 @@ export function StandingsTable({
             >
               <td className="py-2 pr-1 tabular-nums">{row.rank}</td>
               <td className="py-2 pr-2" title={row.team}>
-                <TeamName team={row.team} flagSize={compact ? 14 : 16} />
+                <TeamName team={row.team} flagSize={compact ? 14 : 16} link />
               </td>
               <StatCell>{row.played}</StatCell>
               <StatCell>{row.won}</StatCell>

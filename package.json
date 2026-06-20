@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
-    "build:pages": "cross-env GITHUB_PAGES=true next build",
+    "generate:stats": "tsx scripts/generate-stats-cache.ts",
+    "build": "npm run generate:stats && next build",
+    "build:pages": "npm run generate:stats && cross-env GITHUB_PAGES=true next build",
     "start": "next start",
     "lint": "next lint"
   },

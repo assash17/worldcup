@@ -9,9 +9,12 @@ A Next.js dashboard for FIFA World Cup group stages and knockout tournaments, po
 - **Group Stage** — standings and match results for every group in each tournament
 - **Tournament** — knockout rounds from Round of 32 through the Final (when applicable)
 - **Match details** — click any match for scores, venue, goals, and more
+- **History** — all-time podium table by year with hosts and top-four finishers
+- **Team Records** — search and view any national team's World Cup history
+- **Head-to-Head** — compare two national teams across all World Cup meetings
 - **Team flags** — country flags shown next to every team name
-- **All editions** — 1930 through 2026 (every FIFA World Cup year in openfootball, excluding the 2025 Club World Cup)
-- **Year selector** — switch tournaments from the navigation bar, with host country shown for each edition
+- **All editions** — 1930 through 2026 (excluding the 2025 Club World Cup)
+- **Year selector** — switch tournaments from the navigation bar, with host country shown
 
 ## Data source
 
@@ -19,7 +22,9 @@ Match data is fetched at runtime in the browser from:
 
 `https://raw.githubusercontent.com/openfootball/worldcup.json/master/{year}/worldcup.json`
 
-Team flags are loaded from [flagcdn.com](https://flagcdn.com) using ISO country codes, with a static mapping for historical teams (e.g. West Germany, Soviet Union) and UK home nations (England, Scotland, Wales).
+Historical stats (history, team records, head-to-head) are precomputed at build time into `public/data/stats/cache.json`.
+
+Team flags are loaded from [flagcdn.com](https://flagcdn.com) using ISO country codes.
 
 ## Getting started
 
@@ -29,6 +34,12 @@ npm run dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) — defaults to the 2026 edition.
+
+Regenerate the stats cache after data logic changes:
+
+```bash
+npm run generate:stats
+```
 
 ### GitHub Pages build (local)
 
@@ -44,7 +55,11 @@ Static files are written to `out/`. This uses `basePath: /worldcup` to match the
 |-------|-------------|
 | `/groups?year=2022` | Group stage standings and results |
 | `/tournament?year=2022` | Knockout bracket by round |
-| `/match/g-0?year=2022` | Full match details (click any match to open) |
+| `/match/g-0?year=2022` | Full match details (click any match) |
+| `/history` | All-time World Cup winners and podium |
+| `/stats/teams` | Search and view team World Cup history |
+| `/stats/compare?team1=Brazil&team2=Argentina` | Head-to-head between two teams |
+| `/team/Brazil` | Team World Cup history |
 
 ## Deployment (GitHub Pages)
 

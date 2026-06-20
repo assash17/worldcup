@@ -90,6 +90,7 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
             align="right"
             bold={homeWins}
             flagSize={32}
+            link
             className="w-full text-lg md:justify-end"
           />
           <div className="text-center">
@@ -114,6 +115,7 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
             align="left"
             bold={awayWins}
             flagSize={32}
+            link
             className="w-full text-lg"
           />
         </div>

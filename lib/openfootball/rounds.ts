@@ -20,6 +20,17 @@ const KNOCKOUT_ROUND_ORDER: KnockoutRoundKey[] = [
   "other",
 ];
 
+export function isThirdPlaceRound(round: string): boolean {
+  const r = round.toLowerCase();
+  return (
+    r.includes("match for third") ||
+    r.includes("third-place") ||
+    r.includes("third place") ||
+    r.includes("3rd place") ||
+    (r.includes("3rd") && r.includes("play"))
+  );
+}
+
 export function isKnockoutRound(round: string): boolean {
   const r = round.toLowerCase();
   if (r === "final round") return false;
@@ -32,8 +43,7 @@ export function isKnockoutRound(round: string): boolean {
     r.includes("quarter") ||
     r.includes("round of") ||
     r === "final" ||
-    r.includes("third place") ||
-    r.includes("match for third")
+    isThirdPlaceRound(round)
   );
 }
 
@@ -43,7 +53,7 @@ export function normalizeKnockoutRoundKey(round: string): KnockoutRoundKey {
   if (r.includes("round of 16")) return "round16";
   if (r.includes("quarter")) return "quarter";
   if (r.includes("semi")) return "semi";
-  if (r.includes("third place") || r.includes("match for third")) return "third";
+  if (isThirdPlaceRound(round)) return "third";
   if (r === "final") return "final";
   return "other";
 }

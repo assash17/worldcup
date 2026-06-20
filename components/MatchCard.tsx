@@ -39,7 +39,7 @@ export function MatchCard({ match, year, large = false }: MatchCardProps) {
     >
       <p className="mb-1 text-[10px] font-medium text-gray-400">{match.date}</p>
       <div className="space-y-1">
-        <TeamName team={match.home} bold={homeWins} flagSize={large ? 18 : 14} />
+        <TeamName team={match.home} bold={homeWins} flagSize={large ? 18 : 14} link />
         <div
           className={`text-center font-bold ${
             scoreText === "-" ? "text-gray-400" : "text-[var(--wc-green)]"
@@ -47,7 +47,7 @@ export function MatchCard({ match, year, large = false }: MatchCardProps) {
         >
           {scoreText}
         </div>
-        <TeamName team={match.away} bold={awayWins} flagSize={large ? 18 : 14} />
+        <TeamName team={match.away} bold={awayWins} flagSize={large ? 18 : 14} link />
       </div>
       {showPenalties && (
         <p className="mt-1 text-center text-[10px] text-amber-700">
