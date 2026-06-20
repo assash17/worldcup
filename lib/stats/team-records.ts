@@ -1,6 +1,11 @@
 import { computeGroupStandings } from "@/lib/standings";
 import type { WorldCupData } from "@/lib/openfootball/types";
 import type { WorldCupYear } from "@/lib/openfootball/years";
+import {
+  getFinalDisplayScores,
+  hasPenalties,
+  type MatchScoreInput,
+} from "@/lib/match-score";
 import type { TeamAppearance, TeamHistorySummary, TeamMatchRecord } from "./types";
 import { isRealTeam } from "./helpers";
 
@@ -52,6 +57,20 @@ function getTeamResult(data: WorldCupData, team: string): string {
   return "Group stage";
 }
 
+function toScoreInput(match: TeamMatchRecord): MatchScoreInput {
+  return {
+    homeScore: match.homeScore,
+    awayScore: match.awayScore,
+    htHomeScore: match.htHomeScore,
+    htAwayScore: match.htAwayScore,
+    etHomeScore: match.etHomeScore,
+    etAwayScore: match.etAwayScore,
+    homePenalties: match.homePenalties,
+    awayPenalties: match.awayPenalties,
+    played: match.played,
+  };
+}
+
 function buildTeamMatchRecords(
   data: WorldCupData,
   team: string,
@@ -68,6 +87,12 @@ function buildTeamMatchRecords(
       home: match.home === team,
       homeScore: match.homeScore,
       awayScore: match.awayScore,
+      htHomeScore: match.htHomeScore,
+      htAwayScore: match.htAwayScore,
+      etHomeScore: match.etHomeScore,
+      etAwayScore: match.etAwayScore,
+      homePenalties: match.homePenalties,
+      awayPenalties: match.awayPenalties,
       played: match.played,
     }));
 }
@@ -81,19 +106,25 @@ function summarizeMatches(matches: TeamMatchRecord[]) {
   let played = 0;
 
   for (const match of matches) {
-    if (!match.played || match.homeScore === null || match.awayScore === null) {
-      continue;
-    }
+    const scores = toScoreInput(match);
+    const final = getFinalDisplayScores(scores);
+    if (!final) continue;
 
     played += 1;
-    const teamScore = match.home ? match.homeScore : match.awayScore;
-    const oppScore = match.home ? match.awayScore : match.homeScore;
+    const teamScore = match.home ? final.home : final.away;
+    const oppScore = match.home ? final.away : final.home;
     gf += teamScore;
     ga += oppScore;
 
-    if (teamScore > oppScore) won += 1;
-    else if (teamScore < oppScore) lost += 1;
-    else drawn += 1;
+    if (hasPenalties(scores)) {
+      drawn += 1;
+    } else if (teamScore > oppScore) {
+      won += 1;
+    } else if (teamScore < oppScore) {
+      lost += 1;
+    } else {
+      drawn += 1;
+    }
   }
 
   return { played, won, drawn, lost, gf, ga };

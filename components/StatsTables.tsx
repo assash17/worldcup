@@ -1,7 +1,6 @@
 import Link from "next/link";
 import { TeamName } from "./TeamName";
 import type { EditionSummary } from "@/lib/stats/types";
-import { formatScoreDisplay } from "@/lib/match-score";
 
 interface EditionTimelineProps {
   editions: EditionSummary[];
@@ -70,21 +69,5 @@ export function EditionTimeline({ editions }: EditionTimelineProps) {
         </tbody>
       </table>
     </div>
-  );
-}
-
-export function MatchScoreText({
-  homeScore,
-  awayScore,
-  played,
-}: {
-  homeScore: number | null;
-  awayScore: number | null;
-  played: boolean;
-}) {
-  return (
-    <span className="tabular-nums font-semibold text-[var(--wc-green)]">
-      {formatScoreDisplay(homeScore, awayScore, played)}
-    </span>
   );
 }

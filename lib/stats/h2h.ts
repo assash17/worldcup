@@ -1,7 +1,77 @@
 import type { WorldCupData } from "@/lib/openfootball/types";
 import type { WorldCupYear } from "@/lib/openfootball/years";
+import {
+  getMatchResultForTeam,
+  type MatchScoreInput,
+} from "@/lib/match-score";
 import type { HeadToHeadMatch, HeadToHeadSummary, TeamHistorySummary } from "./types";
 import { isRealTeam } from "./helpers";
+
+function toScoreInput(match: {
+  homeScore: number | null;
+  awayScore: number | null;
+  htHomeScore?: number | null;
+  htAwayScore?: number | null;
+  etHomeScore?: number | null;
+  etAwayScore?: number | null;
+  homePenalties?: number | null;
+  awayPenalties?: number | null;
+  played: boolean;
+}): MatchScoreInput {
+  return {
+    homeScore: match.homeScore,
+    awayScore: match.awayScore,
+    htHomeScore: match.htHomeScore,
+    htAwayScore: match.htAwayScore,
+    etHomeScore: match.etHomeScore,
+    etAwayScore: match.etAwayScore,
+    homePenalties: match.homePenalties,
+    awayPenalties: match.awayPenalties,
+    played: match.played,
+  };
+}
+
+function countResult(
+  scores: MatchScoreInput,
+  homeTeam: string,
+  awayTeam: string,
+  team1: string,
+): "team1" | "team2" | "draw" | null {
+  const team1Result = getMatchResultForTeam(scores, homeTeam, awayTeam, team1);
+  if (!team1Result) return null;
+  if (team1Result === "win") return "team1";
+  if (team1Result === "loss") return "team2";
+  return "draw";
+}
+
+export function getHeadToHeadMatchResultForTeam1(
+  match: HeadToHeadMatch,
+  team1: string,
+) {
+  return getMatchResultForTeam(toScoreInput(match), match.home, match.away, team1);
+}
+
+export function orientHeadToHeadMatchForTeam1(
+  match: HeadToHeadMatch,
+  team1: string,
+  team2: string,
+): MatchScoreInput & { played: boolean } {
+  if (match.home === team1 && match.away === team2) {
+    return toScoreInput(match);
+  }
+
+  return {
+    homeScore: match.awayScore,
+    awayScore: match.homeScore,
+    htHomeScore: match.htAwayScore,
+    htAwayScore: match.htHomeScore,
+    etHomeScore: match.etAwayScore,
+    etAwayScore: match.etHomeScore,
+    homePenalties: match.awayPenalties,
+    awayPenalties: match.homePenalties,
+    played: match.played,
+  };
+}
 
 export function computeHeadToHead(
   datasets: WorldCupData[],
@@ -30,26 +100,24 @@ export function computeHeadToHead(
         away: match.away,
         homeScore: match.homeScore,
         awayScore: match.awayScore,
+        htHomeScore: match.htHomeScore,
+        htAwayScore: match.htAwayScore,
+        etHomeScore: match.etHomeScore,
+        etAwayScore: match.etAwayScore,
+        homePenalties: match.homePenalties,
+        awayPenalties: match.awayPenalties,
         played: match.played,
       });
 
-      if (
-        !match.played ||
-        match.homeScore === null ||
-        match.awayScore === null
-      ) {
-        continue;
-      }
-
-      if (match.homeScore === match.awayScore) {
-        draws += 1;
-        continue;
-      }
-
-      const winner =
-        match.homeScore > match.awayScore ? match.home : match.away;
-      if (winner === team1) team1Wins += 1;
-      else if (winner === team2) team2Wins += 1;
+      const result = countResult(
+        toScoreInput(match),
+        match.home,
+        match.away,
+        team1,
+      );
+      if (result === "team1") team1Wins += 1;
+      else if (result === "team2") team2Wins += 1;
+      else if (result === "draw") draws += 1;
     }
   }
 
@@ -103,27 +171,24 @@ export function computeHeadToHeadFromCache(
         away: awayTeam,
         homeScore: match.homeScore,
         awayScore: match.awayScore,
+        htHomeScore: match.htHomeScore,
+        htAwayScore: match.htAwayScore,
+        etHomeScore: match.etHomeScore,
+        etAwayScore: match.etAwayScore,
+        homePenalties: match.homePenalties,
+        awayPenalties: match.awayPenalties,
         played: match.played,
       });
 
-      if (
-        !match.played ||
-        match.homeScore === null ||
-        match.awayScore === null
-      ) {
-        continue;
-      }
-
-      const team1Score = match.home ? match.homeScore : match.awayScore;
-      const team2Score = match.home ? match.awayScore : match.homeScore;
-
-      if (team1Score === team2Score) {
-        draws += 1;
-      } else if (team1Score > team2Score) {
-        team1Wins += 1;
-      } else {
-        team2Wins += 1;
-      }
+      const result = countResult(
+        toScoreInput(match),
+        homeTeam,
+        awayTeam,
+        team1,
+      );
+      if (result === "team1") team1Wins += 1;
+      else if (result === "team2") team2Wins += 1;
+      else if (result === "draw") draws += 1;
     }
   }
 

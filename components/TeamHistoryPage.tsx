@@ -2,11 +2,12 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { MatchScoreText } from "@/components/StatsTables";
+import { MatchScoreDisplay } from "@/components/MatchScoreDisplay";
 import { TeamName } from "@/components/TeamName";
 import { useStatsCache } from "@/lib/hooks/useStatsCache";
 import { getBestResult } from "@/lib/stats/team-records";
 import { getActualMatchSides } from "@/lib/stats/match-display";
+import type { TeamMatchRecord } from "@/lib/stats/types";
 import { getMatchHref } from "@/lib/match-links";
 
 export function TeamHistoryPage() {
@@ -83,7 +84,7 @@ export function TeamHistoryPage() {
               </span>
             </div>
             <ul className="space-y-2">
-              {appearance.matches.map((match) => {
+              {appearance.matches.map((match: TeamMatchRecord) => {
                 const sides = getActualMatchSides(team, match);
                 return (
                 <li
@@ -95,11 +96,7 @@ export function TeamHistoryPage() {
                   </span>
                   <span className="flex items-center gap-2">
                     <TeamName team={sides.homeTeam} link flagSize={14} />
-                    <MatchScoreText
-                      homeScore={sides.homeScore}
-                      awayScore={sides.awayScore}
-                      played={match.played}
-                    />
+                    <MatchScoreDisplay {...sides} played={match.played} size="sm" />
                     <TeamName team={sides.awayTeam} link flagSize={14} />
                   </span>
                   <Link

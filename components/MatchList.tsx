@@ -1,8 +1,9 @@
 import Link from "next/link";
 import type { ParsedMatch } from "@/lib/openfootball/types";
-import { formatScoreDisplay } from "@/lib/match-score";
 import { getMatchHref } from "@/lib/match-links";
+import { toHomeAwayScoreInput } from "@/lib/match-score";
 import type { WorldCupYear } from "@/lib/openfootball/years";
+import { MatchScoreDisplay } from "./MatchScoreDisplay";
 import { TeamName } from "./TeamName";
 
 interface MatchListProps {
@@ -46,13 +47,7 @@ export function MatchList({ matches, year, compact = false }: MatchListProps) {
                 className="flex items-center justify-between rounded-md border border-gray-200 bg-white px-3 py-2 transition hover:border-[var(--wc-green)] hover:bg-green-50"
               >
                 <TeamName team={match.home} align="right" flagSize={compact ? 14 : 18} className="flex-1" link />
-                <span className="mx-2 min-w-16 text-center font-bold text-[var(--wc-green)]">
-                  {formatScoreDisplay(
-                    match.homeScore,
-                    match.awayScore,
-                    match.played,
-                  )}
-                </span>
+                <MatchScoreDisplay {...toHomeAwayScoreInput(match)} size={compact ? "sm" : "md"} className="mx-2 min-w-16" />
                 <TeamName team={match.away} align="left" flagSize={compact ? 14 : 18} className="flex-1" link />
               </Link>
             ))}

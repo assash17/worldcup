@@ -22,6 +22,12 @@ export interface TeamMatchRecord {
   home: boolean;
   homeScore: number | null;
   awayScore: number | null;
+  htHomeScore: number | null;
+  htAwayScore: number | null;
+  etHomeScore: number | null;
+  etAwayScore: number | null;
+  homePenalties: number | null;
+  awayPenalties: number | null;
   played: boolean;
 }
 
@@ -57,6 +63,12 @@ export interface HeadToHeadMatch {
   away: string;
   homeScore: number | null;
   awayScore: number | null;
+  htHomeScore: number | null;
+  htAwayScore: number | null;
+  etHomeScore: number | null;
+  etAwayScore: number | null;
+  homePenalties: number | null;
+  awayPenalties: number | null;
   played: boolean;
 }
 

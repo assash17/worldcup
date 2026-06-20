@@ -1,5 +1,9 @@
 import type { GoalEvent, ParsedMatch } from "@/lib/openfootball/types";
-import { formatScoreDisplay, hasPenalties } from "@/lib/match-score";
+import {
+  getScoreBreakdown,
+  toHomeAwayScoreInput,
+} from "@/lib/match-score";
+import { MatchScoreDisplay } from "./MatchScoreDisplay";
 import { TeamName } from "./TeamName";
 
 interface MatchDetailViewProps {
@@ -46,38 +50,56 @@ function GoalList({
   );
 }
 
-function ScoreBlock({
-  label,
-  home,
-  away,
+function ScoreBreakdownTable({
+  homeTeam,
+  awayTeam,
+  scores,
 }: {
-  label: string;
-  home: number;
-  away: number;
+  homeTeam: string;
+  awayTeam: string;
+  scores: ReturnType<typeof toHomeAwayScoreInput>;
 }) {
+  const breakdown = getScoreBreakdown(scores);
+  if (breakdown.length === 0) return null;
+
   return (
-    <div className="rounded-md bg-gray-50 px-4 py-2 text-center">
-      <p className="text-xs uppercase tracking-wide text-gray-500">{label}</p>
-      <p className="text-lg font-bold text-[var(--wc-green)]">
-        {home} : {away}
-      </p>
+    <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+      <h3 className="mb-3 text-sm font-semibold text-gray-800">Score breakdown</h3>
+      <div className="overflow-x-auto">
+        <table className="w-full min-w-[320px] text-sm">
+          <thead>
+            <tr className="border-b border-gray-200 text-gray-500">
+              <th className="py-2 pr-4 text-left font-medium">Period</th>
+              <th className="py-2 pr-4 text-right font-medium">{homeTeam}</th>
+              <th className="py-2 text-right font-medium">{awayTeam}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {breakdown.map((item) => (
+              <tr
+                key={item.label}
+                className={`border-b border-gray-100 ${
+                  item.highlight ? "bg-green-50 font-semibold" : ""
+                }`}
+              >
+                <td className="py-2.5 pr-4 text-gray-700">{item.label}</td>
+                <td className="py-2.5 pr-4 text-right tabular-nums text-[var(--wc-green)]">
+                  {item.home}
+                </td>
+                <td className="py-2.5 text-right tabular-nums text-[var(--wc-green)]">
+                  {item.away}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
 
 export function MatchDetailView({ match }: MatchDetailViewProps) {
-  const scoreText = formatScoreDisplay(
-    match.homeScore,
-    match.awayScore,
-    match.played,
-  );
-  const showPenalties = hasPenalties(
-    match.homeScore,
-    match.awayScore,
-    match.homePenalties,
-    match.awayPenalties,
-    match.played,
-  );
+  const scores = toHomeAwayScoreInput(match);
   const homeWins = match.winner === match.home;
   const awayWins = match.winner === match.away;
 
@@ -85,39 +107,38 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
     <div className="space-y-6">
       <div className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm">
         <div className="grid items-center gap-4 md:grid-cols-[1fr_auto_1fr]">
-          <TeamName
-            team={match.home}
-            align="right"
-            bold={homeWins}
-            flagSize={32}
-            link
-            className="w-full text-lg md:justify-end"
-          />
+          <div className="flex w-full flex-col items-end gap-1">
+            <span className="text-[10px] font-medium uppercase tracking-wide text-gray-400">
+              Home
+            </span>
+            <TeamName
+              team={match.home}
+              align="right"
+              bold={homeWins}
+              flagSize={32}
+              link
+              className="text-lg"
+            />
+          </div>
           <div className="text-center">
-            <p
-              className={`text-3xl font-bold ${
-                scoreText === "-" ? "text-gray-400" : "text-[var(--wc-green)]"
-              }`}
-            >
-              {scoreText}
-            </p>
-            {showPenalties && (
-              <p className="mt-1 text-sm text-amber-700">
-                Penalties {match.homePenalties}-{match.awayPenalties}
-              </p>
-            )}
+            <MatchScoreDisplay {...scores} size="lg" />
             {!match.played && (
               <p className="mt-1 text-sm text-gray-400">Not played yet</p>
             )}
           </div>
-          <TeamName
-            team={match.away}
-            align="left"
-            bold={awayWins}
-            flagSize={32}
-            link
-            className="w-full text-lg"
-          />
+          <div className="flex w-full flex-col items-start gap-1">
+            <span className="text-[10px] font-medium uppercase tracking-wide text-gray-400">
+              Away
+            </span>
+            <TeamName
+              team={match.away}
+              align="left"
+              bold={awayWins}
+              flagSize={32}
+              link
+              className="text-lg"
+            />
+          </div>
         </div>
       </div>
 
@@ -133,33 +154,18 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
       </div>
 
       {match.played && (
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {match.htHomeScore !== null && match.htAwayScore !== null && (
-            <ScoreBlock
-              label="Half-time"
-              home={match.htHomeScore}
-              away={match.htAwayScore}
-            />
-          )}
-          {match.etHomeScore !== null && match.etAwayScore !== null && (
-            <ScoreBlock
-              label="Extra time"
-              home={match.etHomeScore}
-              away={match.etAwayScore}
-            />
-          )}
-          {showPenalties && (
-            <ScoreBlock
-              label="Penalties"
-              home={match.homePenalties!}
-              away={match.awayPenalties!}
-            />
-          )}
-        </div>
+        <ScoreBreakdownTable
+          homeTeam={match.home}
+          awayTeam={match.away}
+          scores={scores}
+        />
       )}
 
       <div className="grid gap-6 md:grid-cols-2">
         <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+          <h3 className="mb-1 text-[10px] font-medium uppercase tracking-wide text-gray-400">
+            Home
+          </h3>
           <h3 className="mb-3 font-semibold text-gray-700">
             <TeamName team={match.home} flagSize={20} />
           </h3>
@@ -170,6 +176,9 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
           />
         </div>
         <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
+          <h3 className="mb-1 text-[10px] font-medium uppercase tracking-wide text-gray-400">
+            Away
+          </h3>
           <h3 className="mb-3 font-semibold text-gray-700">
             <TeamName team={match.away} flagSize={20} />
           </h3>

@@ -1,11 +1,9 @@
 import Link from "next/link";
-import {
-  formatScoreDisplay,
-  hasPenalties,
-} from "@/lib/match-score";
+import { toHomeAwayScoreInput } from "@/lib/match-score";
 import type { ParsedKnockoutMatch } from "@/lib/openfootball/types";
 import { getMatchHref } from "@/lib/match-links";
 import type { WorldCupYear } from "@/lib/openfootball/years";
+import { MatchScoreDisplay } from "./MatchScoreDisplay";
 import { TeamName } from "./TeamName";
 
 interface MatchCardProps {
@@ -17,18 +15,6 @@ interface MatchCardProps {
 export function MatchCard({ match, year, large = false }: MatchCardProps) {
   const homeWins = match.winner === match.home;
   const awayWins = match.winner === match.away;
-  const scoreText = formatScoreDisplay(
-    match.homeScore,
-    match.awayScore,
-    match.played,
-  );
-  const showPenalties = hasPenalties(
-    match.homeScore,
-    match.awayScore,
-    match.homePenalties,
-    match.awayPenalties,
-    match.played,
-  );
 
   return (
     <Link
@@ -40,20 +26,9 @@ export function MatchCard({ match, year, large = false }: MatchCardProps) {
       <p className="mb-1 text-[10px] font-medium text-gray-400">{match.date}</p>
       <div className="space-y-1">
         <TeamName team={match.home} bold={homeWins} flagSize={large ? 18 : 14} link />
-        <div
-          className={`text-center font-bold ${
-            scoreText === "-" ? "text-gray-400" : "text-[var(--wc-green)]"
-          }`}
-        >
-          {scoreText}
-        </div>
+        <MatchScoreDisplay {...toHomeAwayScoreInput(match)} size="sm" className="w-full" />
         <TeamName team={match.away} bold={awayWins} flagSize={large ? 18 : 14} link />
       </div>
-      {showPenalties && (
-        <p className="mt-1 text-center text-[10px] text-amber-700">
-          Pen {match.homePenalties}-{match.awayPenalties}
-        </p>
-      )}
     </Link>
   );
 }

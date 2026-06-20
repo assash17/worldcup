@@ -3,12 +3,16 @@
 import Link from "next/link";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Suspense, useMemo } from "react";
-import { MatchScoreText } from "@/components/StatsTables";
+import { MatchScoreDisplay } from "@/components/MatchScoreDisplay";
 import { TeamName } from "@/components/TeamName";
 import { TeamSearchSelect } from "@/components/TeamSearchSelect";
 import { useStatsCache } from "@/lib/hooks/useStatsCache";
-import { computeHeadToHeadFromCache } from "@/lib/stats/h2h";
+import { computeHeadToHeadFromCache, getHeadToHeadMatchResultForTeam1, orientHeadToHeadMatchForTeam1 } from "@/lib/stats/h2h";
 import { getMatchHref } from "@/lib/match-links";
+import {
+  MATCH_RESULT_BADGE_CLASS,
+  MATCH_RESULT_ROW_CLASS,
+} from "@/lib/match-result-styles";
 
 function CompareContent() {
   const searchParams = useSearchParams();
@@ -80,13 +84,17 @@ function CompareContent() {
           <p className="text-sm text-gray-500">Choose two different teams.</p>
         ) : h2h ? (
           <div>
-            <p className="mb-4 text-sm">
+            <p className="mb-4 flex flex-wrap items-center gap-2 text-sm">
               <TeamName team={h2h.team1} link bold flagSize={18} />
-              <span className="mx-2 font-semibold text-[var(--wc-green)]">
-                {h2h.team1Wins} – {h2h.draws} – {h2h.team2Wins}
+              <span className="inline-flex items-center gap-1.5 tabular-nums">
+                <span className={MATCH_RESULT_BADGE_CLASS.win}>{h2h.team1Wins}</span>
+                <span className="text-gray-400">–</span>
+                <span className={MATCH_RESULT_BADGE_CLASS.draw}>{h2h.draws}</span>
+                <span className="text-gray-400">–</span>
+                <span className={MATCH_RESULT_BADGE_CLASS.loss}>{h2h.team2Wins}</span>
               </span>
               <TeamName team={h2h.team2} link bold flagSize={18} />
-              <span className="ml-2 text-gray-500">(wins – draws – wins)</span>
+              <span className="text-gray-500">(wins – draws – wins)</span>
             </p>
             {h2h.matches.length === 0 ? (
               <p className="text-sm text-gray-500">
@@ -94,22 +102,29 @@ function CompareContent() {
               </p>
             ) : (
               <ul className="space-y-2">
-                {h2h.matches.map((match) => (
+                {h2h.matches.map((match) => {
+                  const result = getHeadToHeadMatchResultForTeam1(match, team1Param);
+                  const oriented = orientHeadToHeadMatchForTeam1(
+                    match,
+                    team1Param,
+                    team2Param,
+                  );
+                  const rowClass = result
+                    ? MATCH_RESULT_ROW_CLASS[result]
+                    : "bg-white border-gray-200";
+
+                  return (
                   <li
                     key={`${match.year}-${match.matchId}`}
-                    className="flex flex-wrap items-center justify-between gap-2 rounded-md border border-gray-200 px-3 py-2 text-sm"
+                    className={`flex flex-wrap items-center justify-between gap-2 rounded-md border px-3 py-2 text-sm ${rowClass}`}
                   >
                     <span className="text-gray-500">
                       {match.year} · {match.round}
                     </span>
                     <span className="flex items-center gap-2">
-                      <TeamName team={match.home} link flagSize={14} />
-                      <MatchScoreText
-                        homeScore={match.homeScore}
-                        awayScore={match.awayScore}
-                        played={match.played}
-                      />
-                      <TeamName team={match.away} link flagSize={14} />
+                      <TeamName team={team1Param} link flagSize={14} />
+                      <MatchScoreDisplay {...oriented} size="sm" />
+                      <TeamName team={team2Param} link flagSize={14} />
                     </span>
                     <Link
                       href={getMatchHref(match.year, match.matchId)}
@@ -118,7 +133,8 @@ function CompareContent() {
                       Details
                     </Link>
                   </li>
-                ))}
+                  );
+                })}
               </ul>
             )}
           </div>
