@@ -6,20 +6,75 @@ import {
   hasPenalties,
   type MatchScoreInput,
 } from "@/lib/match-score";
-import type { TeamAppearance, TeamHistorySummary, TeamMatchRecord } from "./types";
+import type {
+  BestResultSummary,
+  TeamAppearance,
+  TeamHistorySummary,
+  TeamMatchRecord,
+} from "./types";
 import { isRealTeam } from "./helpers";
 
 const ROUND_RANK: Record<string, number> = {
   Winner: 100,
   "Runner-up": 90,
   "Third place": 80,
-  "Semi-finals": 70,
+  "Fourth place": 70,
+  "Semi-finals": 65,
   "Quarter-finals": 60,
   "Round of 16": 50,
   "Round of 32": 40,
   "Final Round": 35,
   "Group stage": 10,
 };
+
+export function normalizeTeamResult(result: string): string {
+  const r = result.toLowerCase().trim();
+
+  if (r === "winner") return "Winner";
+  if (r === "runner-up" || r === "runner up") return "Runner-up";
+  if (r === "third place") return "Third place";
+  if (r === "fourth place") return "Fourth place";
+
+  if (
+    r.includes("match for third") ||
+    r.includes("third place match") ||
+    r.includes("third-place match") ||
+    r.includes("third place play-off") ||
+    r.includes("third-place play-off") ||
+    r.includes("third place playoff") ||
+    r.includes("third-place playoff")
+  ) {
+    return "Fourth place";
+  }
+
+  if (r.includes("semi")) return "Semi-finals";
+  if (r.includes("quarter")) return "Quarter-finals";
+  if (r.includes("round of 16")) return "Round of 16";
+  if (r.includes("round of 32")) return "Round of 32";
+  if (r === "final round") return "Final Round";
+  if (r.startsWith("group")) return "Group stage";
+
+  return result;
+}
+
+export type AppearancePhase = "Group stage" | "Tournament";
+
+export function getAppearanceResultDisplay(result: string): {
+  phase: AppearancePhase;
+  finish: string;
+} {
+  const normalized = normalizeTeamResult(result);
+
+  if (normalized === "Group stage") {
+    return { phase: "Group stage", finish: "Group stage" };
+  }
+
+  return { phase: "Tournament", finish: normalized };
+}
+
+function getResultRank(result: string): number {
+  return ROUND_RANK[normalizeTeamResult(result)] ?? 0;
+}
 
 function getTeamResult(data: WorldCupData, team: string): string {
   const final = data.knockoutMatches.find((m) => m.roundKey === "final");
@@ -30,7 +85,10 @@ function getTeamResult(data: WorldCupData, team: string): string {
   }
 
   const third = data.knockoutMatches.find((m) => m.roundKey === "third");
-  if (third?.played && third.winner === team) return "Third place";
+  if (third?.played) {
+    if (third.winner === team) return "Third place";
+    if (third.home === team || third.away === team) return "Fourth place";
+  }
 
   const teamKnockout = data.knockoutMatches
     .filter((m) => m.home === team || m.away === team)
@@ -38,10 +96,7 @@ function getTeamResult(data: WorldCupData, team: string): string {
 
   const latest = teamKnockout[0];
   if (latest?.played) {
-    if (latest.winner === team) {
-      return latest.round;
-    }
-    return latest.round;
+    return normalizeTeamResult(latest.round);
   }
 
   const finalRound = data.groupMatches.filter((m) => m.group === "Final Round");
@@ -82,6 +137,7 @@ function buildTeamMatchRecords(
       year: data.year as WorldCupYear,
       matchId: match.id,
       date: match.date,
+      time: match.time,
       round: match.round,
       opponent: match.home === team ? match.away : match.home,
       home: match.home === team,
@@ -139,7 +195,7 @@ export function buildTeamAppearance(
 
   return {
     year: data.year as WorldCupYear,
-    result: getTeamResult(data, team),
+    result: normalizeTeamResult(getTeamResult(data, team)),
     ...stats,
     matches,
   };
@@ -182,12 +238,42 @@ export function buildAllTeamHistories(
   return result;
 }
 
-export function getBestResult(appearances: TeamAppearance[]): string | null {
+export function getBestResultSummary(
+  appearances: TeamAppearance[],
+  getHosts: (year: WorldCupYear) => string = () => "",
+): BestResultSummary | null {
   if (appearances.length === 0) return null;
 
-  return appearances.reduce((best, appearance) => {
-    const bestRank = ROUND_RANK[best] ?? 0;
-    const currentRank = ROUND_RANK[appearance.result] ?? 0;
-    return currentRank > bestRank ? appearance.result : best;
-  }, appearances[0].result);
+  let bestRank = -1;
+  let bestResult = "";
+  const tied: TeamAppearance[] = [];
+
+  for (const appearance of appearances) {
+    const normalized = normalizeTeamResult(appearance.result);
+    const rank = getResultRank(normalized);
+    if (rank > bestRank) {
+      bestRank = rank;
+      bestResult = normalized;
+      tied.length = 0;
+      tied.push(appearance);
+    } else if (rank === bestRank && rank >= 0) {
+      tied.push(appearance);
+    }
+  }
+
+  if (bestRank < 0 || tied.length === 0) return null;
+
+  return {
+    result: bestResult,
+    editions: tied
+      .map((appearance) => ({
+        year: appearance.year,
+        hosts: getHosts(appearance.year),
+      }))
+      .sort((a, b) => b.year - a.year),
+  };
+}
+
+export function getBestResult(appearances: TeamAppearance[]): string | null {
+  return getBestResultSummary(appearances)?.result ?? null;
 }

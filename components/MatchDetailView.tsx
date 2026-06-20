@@ -3,6 +3,7 @@ import {
   getScoreBreakdown,
   toHomeAwayScoreInput,
 } from "@/lib/match-score";
+import { formatMatchDateTime } from "@/lib/match-datetime";
 import { MatchScoreDisplay } from "./MatchScoreDisplay";
 import { TeamName } from "./TeamName";
 
@@ -143,8 +144,10 @@ export function MatchDetailView({ match }: MatchDetailViewProps) {
       </div>
 
       <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        <DetailItem label="Date" value={match.date} />
-        <DetailItem label="Time" value={match.time ?? "—"} />
+        <DetailItem
+          label="Date"
+          value={formatMatchDateTime(match.date, match.time)}
+        />
         <DetailItem label="Round" value={match.round} />
         <DetailItem label="Venue" value={match.ground ?? "—"} />
         {match.group && <DetailItem label="Group" value={match.group} />}

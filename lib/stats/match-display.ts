@@ -1,4 +1,5 @@
 import type { TeamMatchRecord } from "./types";
+import { getMatchResultForTeam } from "@/lib/match-score";
 
 export function getActualMatchSides(
   team: string,
@@ -27,4 +28,25 @@ export function getActualMatchSides(
     homePenalties: match.homePenalties,
     awayPenalties: match.awayPenalties,
   };
+}
+
+export function getTeamMatchResult(team: string, match: TeamMatchRecord) {
+  const sides = getActualMatchSides(team, match);
+
+  return getMatchResultForTeam(
+    {
+      homeScore: sides.homeScore,
+      awayScore: sides.awayScore,
+      htHomeScore: sides.htHomeScore,
+      htAwayScore: sides.htAwayScore,
+      etHomeScore: sides.etHomeScore,
+      etAwayScore: sides.etAwayScore,
+      homePenalties: sides.homePenalties,
+      awayPenalties: sides.awayPenalties,
+      played: match.played,
+    },
+    sides.homeTeam,
+    sides.awayTeam,
+    team,
+  );
 }

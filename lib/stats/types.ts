@@ -17,6 +17,7 @@ export interface TeamMatchRecord {
   year: WorldCupYear;
   matchId: string;
   date: string;
+  time: string | null;
   round: string;
   opponent: string;
   home: boolean;
@@ -41,6 +42,16 @@ export interface TeamAppearance {
   gf: number;
   ga: number;
   matches: TeamMatchRecord[];
+}
+
+export interface BestResultEdition {
+  year: WorldCupYear;
+  hosts: string;
+}
+
+export interface BestResultSummary {
+  result: string;
+  editions: BestResultEdition[];
 }
 
 export interface TeamHistorySummary {
