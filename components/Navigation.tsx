@@ -5,7 +5,9 @@ import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { YearSelector } from "./YearSelector";
 import { formatWorldCupShort } from "@/lib/openfootball/hosts";
-import { DEFAULT_YEAR, parseYearParam, type WorldCupYear } from "@/lib/openfootball/years";
+import { getHostsForYear } from "@/lib/openfootball/manifest-client";
+import { useWorldCupYears } from "@/lib/hooks/useWorldCupYears";
+import { parseYearParam, type WorldCupYear } from "@/lib/openfootball/years";
 
 const editionLinks = [
   { href: "/groups", label: "Group Stage" },
@@ -30,8 +32,10 @@ function NavigationContent() {
   const pathname = usePathname();
   const router = useRouter();
   const searchParams = useSearchParams();
-  const year = parseYearParam(searchParams.get("year"));
+  const { manifest, knownYears, defaultYear } = useWorldCupYears();
+  const year = parseYearParam(searchParams.get("year"), knownYears, defaultYear);
   const isGlobalPage = isGlobalStatsPath(pathname);
+  const hosts = manifest ? getHostsForYear(manifest, year) : "…";
 
   const withYear = (href: string) => `${href}?year=${year}`;
 
@@ -50,7 +54,7 @@ function NavigationContent() {
               FIFA World Cup
             </p>
             <h1 className="text-xl font-bold">
-              {isGlobalPage ? "History & Statistics" : formatWorldCupShort(year)}
+              {isGlobalPage ? "History & Statistics" : formatWorldCupShort(year, hosts)}
             </h1>
           </div>
           {!isGlobalPage && (
@@ -63,7 +67,7 @@ function NavigationContent() {
           )}
           {isGlobalPage && (
             <Link
-              href={`/groups?year=${DEFAULT_YEAR}`}
+              href={`/groups?year=${defaultYear}`}
               className="self-start text-sm text-white/80 underline-offset-2 hover:text-white hover:underline"
             >
               Tournament records →
@@ -94,7 +98,7 @@ function NavigationContent() {
           </nav>
         ) : (
           <div className="flex flex-wrap items-center gap-3 border-t border-white/20 pt-3">
-            <YearSelector year={year} onChange={onYearChange} />
+            <YearSelector year={year} manifest={manifest} onChange={onYearChange} />
             <nav className="flex flex-wrap gap-2">
               {editionLinks.map((link) => {
                 const active = pathname.startsWith(link.href);

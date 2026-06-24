@@ -22,8 +22,16 @@ function HistoryContent() {
         World Cup History
       </h2>
       <p className="mb-4 text-sm text-gray-500">
-        All FIFA World Cup editions from 1930 to 2026. Click a year to open that
-        tournament.
+        {cache.editions.length > 0 ? (
+          <>
+            All FIFA World Cup editions from{" "}
+            {Math.min(...cache.editions.map((edition) => edition.year))} to{" "}
+            {Math.max(...cache.editions.map((edition) => edition.year))}. Click a
+            year to open that tournament.
+          </>
+        ) : (
+          <>All FIFA World Cup editions. Click a year to open that tournament.</>
+        )}
       </p>
       <div className="rounded-lg border border-gray-200 bg-white p-4 shadow-sm">
         <EditionTimeline editions={cache.editions} />

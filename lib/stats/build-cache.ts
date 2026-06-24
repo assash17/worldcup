@@ -1,13 +1,12 @@
+import { discoverWorldCupYears } from "@/lib/openfootball/discover-years";
 import { fetchWorldCupData } from "@/lib/openfootball/fetch";
-import { WORLD_CUP_YEARS } from "@/lib/openfootball/years";
 import { extractEditionSummary } from "./editions";
 import { buildAllTeamHistories } from "./team-records";
 import type { StatsCache } from "./types";
 
 export async function buildStatsCache(): Promise<StatsCache> {
-  const datasets = await Promise.all(
-    WORLD_CUP_YEARS.map((year) => fetchWorldCupData(year)),
-  );
+  const years = await discoverWorldCupYears();
+  const datasets = await Promise.all(years.map((year) => fetchWorldCupData(year)));
 
   const editions = datasets
     .map(extractEditionSummary)

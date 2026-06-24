@@ -1,6 +1,4 @@
-import type { WorldCupYear } from "./years";
-
-export const WORLD_CUP_HOSTS: Record<WorldCupYear, string> = {
+const HOST_OVERRIDES: Record<number, string> = {
   1930: "Uruguay",
   1934: "Italy",
   1938: "France",
@@ -26,18 +24,38 @@ export const WORLD_CUP_HOSTS: Record<WorldCupYear, string> = {
   2026: "Canada, Mexico & United States",
 };
 
-export function getWorldCupHosts(year: WorldCupYear): string {
-  return WORLD_CUP_HOSTS[year];
+export function parseHostsFromEditionName(
+  name: string,
+  year: number,
+): string | null {
+  let cleaned = name.trim();
+  cleaned = cleaned.replace(new RegExp(`\\b${year}\\b`, "g"), "");
+  cleaned = cleaned.replace(/\bFIFA\b/gi, "");
+  cleaned = cleaned.replace(/\bWorld Cup\b/gi, "");
+  cleaned = cleaned.replace(/^[\s\-–—|:]+|[\s\-–—|:]+$/g, "");
+  cleaned = cleaned.trim();
+
+  return cleaned || null;
 }
 
-export function formatWorldCupTitle(year: WorldCupYear): string {
-  return `FIFA World Cup ${year} — ${getWorldCupHosts(year)}`;
+export function resolveWorldCupHosts(year: number, editionName: string): string {
+  const override = HOST_OVERRIDES[year];
+  if (override) return override;
+
+  const parsed = parseHostsFromEditionName(editionName, year);
+  if (parsed) return parsed;
+
+  return "TBD";
 }
 
-export function formatWorldCupShort(year: WorldCupYear): string {
-  return `${year} — ${getWorldCupHosts(year)}`;
+export function formatWorldCupTitle(year: number, hosts: string): string {
+  return `FIFA World Cup ${year} — ${hosts}`;
 }
 
-export function formatYearOption(year: WorldCupYear): string {
-  return `${year} (${getWorldCupHosts(year)})`;
+export function formatWorldCupShort(year: number, hosts: string): string {
+  return `${year} — ${hosts}`;
+}
+
+export function formatYearOption(year: number, hosts: string): string {
+  return `${year} (${hosts})`;
 }

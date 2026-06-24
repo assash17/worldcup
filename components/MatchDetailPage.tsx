@@ -52,7 +52,9 @@ export function MatchDetailPage() {
       <h2 className="mb-1 text-2xl font-bold text-[var(--wc-green)]">
         Match Details
       </h2>
-      <p className="mb-6 text-sm text-gray-500">{formatWorldCupTitle(year)}</p>
+      <p className="mb-6 text-sm text-gray-500">
+        {formatWorldCupTitle(year, data.hosts)}
+      </p>
       <MatchDetailView match={match} />
     </div>
   );

@@ -1,11 +1,13 @@
 "use client";
 
 import { useRouter, useSearchParams } from "next/navigation";
+import { useWorldCupYears } from "@/lib/hooks/useWorldCupYears";
 import { parseYearParam, type WorldCupYear } from "@/lib/openfootball/years";
 
 export function useYearFromUrl(): WorldCupYear {
   const searchParams = useSearchParams();
-  return parseYearParam(searchParams.get("year"));
+  const { knownYears, defaultYear } = useWorldCupYears();
+  return parseYearParam(searchParams.get("year"), knownYears, defaultYear);
 }
 
 export function useYearNavigation() {

@@ -1,0 +1,120 @@
+{
+  "generatedAt": "2026-06-24T22:58:53.589Z",
+  "years": [
+    {
+      "year": 2026,
+      "name": "World Cup 2026",
+      "hosts": "Canada, Mexico & United States"
+    },
+    {
+      "year": 2022,
+      "name": "World Cup 2022",
+      "hosts": "Qatar"
+    },
+    {
+      "year": 2018,
+      "name": "World Cup 2018",
+      "hosts": "Russia"
+    },
+    {
+      "year": 2014,
+      "name": "World Cup 2014",
+      "hosts": "Brazil"
+    },
+    {
+      "year": 2010,
+      "name": "World Cup 2010",
+      "hosts": "South Africa"
+    },
+    {
+      "year": 2006,
+      "name": "World Cup 2006",
+      "hosts": "Germany"
+    },
+    {
+      "year": 2002,
+      "name": "World Cup 2002",
+      "hosts": "South Korea & Japan"
+    },
+    {
+      "year": 1998,
+      "name": "World Cup 1998",
+      "hosts": "France"
+    },
+    {
+      "year": 1994,
+      "name": "World Cup 1994",
+      "hosts": "United States"
+    },
+    {
+      "year": 1990,
+      "name": "World Cup 1990",
+      "hosts": "Italy"
+    },
+    {
+      "year": 1986,
+      "name": "World Cup 1986",
+      "hosts": "Mexico"
+    },
+    {
+      "year": 1982,
+      "name": "World Cup 1982",
+      "hosts": "Spain"
+    },
+    {
+      "year": 1978,
+      "name": "World Cup 1978",
+      "hosts": "Argentina"
+    },
+    {
+      "year": 1974,
+      "name": "World Cup 1974",
+      "hosts": "West Germany"
+    },
+    {
+      "year": 1970,
+      "name": "World Cup 1970",
+      "hosts": "Mexico"
+    },
+    {
+      "year": 1966,
+      "name": "World Cup 1966",
+      "hosts": "England"
+    },
+    {
+      "year": 1962,
+      "name": "World Cup 1962",
+      "hosts": "Chile"
+    },
+    {
+      "year": 1958,
+      "name": "World Cup 1958",
+      "hosts": "Sweden"
+    },
+    {
+      "year": 1954,
+      "name": "World Cup 1954",
+      "hosts": "Switzerland"
+    },
+    {
+      "year": 1950,
+      "name": "World Cup 1950",
+      "hosts": "Brazil"
+    },
+    {
+      "year": 1938,
+      "name": "World Cup 1938",
+      "hosts": "France"
+    },
+    {
+      "year": 1934,
+      "name": "World Cup 1934",
+      "hosts": "Italy"
+    },
+    {
+      "year": 1930,
+      "name": "World Cup 1930",
+      "hosts": "Uruguay"
+    }
+  ]
+}

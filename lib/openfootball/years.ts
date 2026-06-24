@@ -1,18 +1,43 @@
-export const WORLD_CUP_YEARS = [
-  1930, 1934, 1938, 1950, 1954, 1958, 1962, 1966, 1970, 1974, 1978, 1982,
-  1986, 1990, 1994, 1998, 2002, 2006, 2010, 2014, 2018, 2022, 2026,
-] as const;
+export type WorldCupYear = number;
 
-export type WorldCupYear = (typeof WORLD_CUP_YEARS)[number];
+export const MIN_WORLD_CUP_YEAR = 1930;
 
-export const DEFAULT_YEAR: WorldCupYear = 2026;
+export const FALLBACK_DEFAULT_YEAR = 2026;
 
-export function isValidYear(value: string | number): value is WorldCupYear {
-  const year = typeof value === "string" ? Number(value) : value;
-  return (WORLD_CUP_YEARS as readonly number[]).includes(year);
+export function getKnownYears(years: number[] | undefined): number[] {
+  return years ?? [];
 }
 
-export function parseYearParam(value: string | null): WorldCupYear {
-  if (value && isValidYear(value)) return Number(value) as WorldCupYear;
-  return DEFAULT_YEAR;
+export function getDefaultYear(years: number[] | undefined): WorldCupYear {
+  if (years?.length) return Math.max(...years);
+  return FALLBACK_DEFAULT_YEAR;
+}
+
+export function isValidYear(
+  value: string | number,
+  knownYears?: number[],
+): value is WorldCupYear {
+  const year = typeof value === "string" ? Number(value) : value;
+
+  if (!Number.isFinite(year) || year < MIN_WORLD_CUP_YEAR) {
+    return false;
+  }
+
+  if (knownYears?.length) {
+    return knownYears.includes(year);
+  }
+
+  return true;
+}
+
+export function parseYearParam(
+  value: string | null,
+  knownYears?: number[],
+  defaultYear?: WorldCupYear,
+): WorldCupYear {
+  if (value && isValidYear(value, knownYears)) {
+    return Number(value);
+  }
+
+  return defaultYear ?? getDefaultYear(knownYears);
 }

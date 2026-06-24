@@ -1,11 +1,8 @@
-import type { WorldCupData } from "@/lib/openfootball/types";
-import type { WorldCupYear } from "@/lib/openfootball/years";
 import {
   getMatchResultForTeam,
   type MatchScoreInput,
 } from "@/lib/match-score";
 import type { HeadToHeadMatch, HeadToHeadSummary, TeamHistorySummary } from "./types";
-import { isRealTeam } from "./helpers";
 
 function toScoreInput(match: {
   homeScore: number | null;
@@ -71,73 +68,6 @@ export function orientHeadToHeadMatchForTeam1(
     awayPenalties: match.homePenalties,
     played: match.played,
   };
-}
-
-export function computeHeadToHead(
-  datasets: WorldCupData[],
-  team1: string,
-  team2: string,
-): HeadToHeadSummary {
-  const matches: HeadToHeadMatch[] = [];
-  let team1Wins = 0;
-  let team2Wins = 0;
-  let draws = 0;
-
-  for (const data of datasets) {
-    for (const match of data.matches) {
-      const involvesBoth =
-        (match.home === team1 && match.away === team2) ||
-        (match.home === team2 && match.away === team1);
-
-      if (!involvesBoth) continue;
-
-      matches.push({
-        year: data.year as WorldCupYear,
-        matchId: match.id,
-        date: match.date,
-        round: match.round,
-        home: match.home,
-        away: match.away,
-        homeScore: match.homeScore,
-        awayScore: match.awayScore,
-        htHomeScore: match.htHomeScore,
-        htAwayScore: match.htAwayScore,
-        etHomeScore: match.etHomeScore,
-        etAwayScore: match.etAwayScore,
-        homePenalties: match.homePenalties,
-        awayPenalties: match.awayPenalties,
-        played: match.played,
-      });
-
-      const result = countResult(
-        toScoreInput(match),
-        match.home,
-        match.away,
-        team1,
-      );
-      if (result === "team1") team1Wins += 1;
-      else if (result === "team2") team2Wins += 1;
-      else if (result === "draw") draws += 1;
-    }
-  }
-
-  matches.sort((a, b) => {
-    if (b.year !== a.year) return b.year - a.year;
-    return b.date.localeCompare(a.date);
-  });
-
-  return { team1, team2, team1Wins, team2Wins, draws, matches };
-}
-
-export function getComparableTeams(datasets: WorldCupData[]): string[] {
-  const teams = new Set<string>();
-  for (const data of datasets) {
-    for (const match of data.matches) {
-      if (isRealTeam(match.home)) teams.add(match.home);
-      if (isRealTeam(match.away)) teams.add(match.away);
-    }
-  }
-  return [...teams].sort((a, b) => a.localeCompare(b));
 }
 
 export function computeHeadToHeadFromCache(

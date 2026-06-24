@@ -3,9 +3,9 @@
 import { useCallback, useEffect, useState } from "react";
 import { fetchWorldCupData } from "@/lib/openfootball/fetch";
 import type { WorldCupData } from "@/lib/openfootball/types";
-import { DEFAULT_YEAR, type WorldCupYear } from "@/lib/openfootball/years";
+import { FALLBACK_DEFAULT_YEAR, type WorldCupYear } from "@/lib/openfootball/years";
 
-export function useWorldCupData(year: WorldCupYear = DEFAULT_YEAR) {
+export function useWorldCupData(year: WorldCupYear = FALLBACK_DEFAULT_YEAR) {
   const [data, setData] = useState<WorldCupData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);

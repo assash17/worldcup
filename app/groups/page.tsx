@@ -46,7 +46,7 @@ function GroupsContent() {
           Group Stage
         </h2>
         <p className="text-gray-500">
-          No group stage data for {formatWorldCupTitle(year)}.
+          No group stage data for {formatWorldCupTitle(year, data.hosts)}.
         </p>
       </div>
     );
@@ -57,7 +57,9 @@ function GroupsContent() {
       <h2 className="mb-1 text-2xl font-bold text-[var(--wc-green)]">
         Group Stage
       </h2>
-      <p className="mb-4 text-sm text-gray-500">{formatWorldCupTitle(year)}</p>
+      <p className="mb-4 text-sm text-gray-500">
+        {formatWorldCupTitle(year, data.hosts)}
+      </p>
       <Tabs
         tabs={tabs}
         active={activeTab}

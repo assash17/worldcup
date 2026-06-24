@@ -2,14 +2,17 @@
 
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
-import { DEFAULT_YEAR } from "@/lib/openfootball/years";
+import { useWorldCupYears } from "@/lib/hooks/useWorldCupYears";
 
 export default function Home() {
   const router = useRouter();
+  const { defaultYear, loading } = useWorldCupYears();
 
   useEffect(() => {
-    router.replace(`/groups?year=${DEFAULT_YEAR}`);
-  }, [router]);
+    if (!loading) {
+      router.replace(`/groups?year=${defaultYear}`);
+    }
+  }, [router, defaultYear, loading]);
 
   return <p className="text-gray-500">Loading...</p>;
 }

@@ -6,7 +6,7 @@ import {
   normalizeKnockoutRoundKey,
   parseMatchday,
 } from "./rounds";
-import { getWorldCupHosts } from "./hosts";
+import { resolveWorldCupHosts } from "./hosts";
 import type {
   GoalEvent,
   OpenFootballGoal,
@@ -17,7 +17,6 @@ import type {
   ParsedMatch,
   WorldCupData,
 } from "./types";
-import type { WorldCupYear } from "./years";
 
 function parseScores(score?: {
   ft?: [number, number];
@@ -202,7 +201,7 @@ export function parseWorldCup(year: number, data: OpenFootballWorldCup): WorldCu
   return {
     year,
     name: data.name,
-    hosts: getWorldCupHosts(year as WorldCupYear),
+    hosts: resolveWorldCupHosts(year, data.name),
     matches,
     matchesById,
     groupMatches,
