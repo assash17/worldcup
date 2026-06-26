@@ -1,4 +1,11 @@
-import type { ParsedGroupMatch, TeamStanding } from "./types";
+import type { ParsedGroupMatch, TeamStanding, ThirdPlaceStanding } from "./types";
+
+export const BEST_THIRD_PLACE_QUALIFIERS = 8;
+export const BEST_THIRD_PLACE_FROM_YEAR = 2026;
+
+export function supportsBestThirdPlaceRanking(year: number): boolean {
+  return year >= BEST_THIRD_PLACE_FROM_YEAR;
+}
 
 interface TeamStats {
   team: string;
@@ -165,4 +172,36 @@ export function computeAllStandings(
     result[group] = computeGroupStandings(group, matches);
   }
   return result;
+}
+
+function compareThirdPlaceStandings(
+  a: TeamStanding,
+  b: TeamStanding,
+): number {
+  if (b.pts !== a.pts) return b.pts - a.pts;
+  if (b.gd !== a.gd) return b.gd - a.gd;
+  if (b.gf !== a.gf) return b.gf - a.gf;
+  return a.team.localeCompare(b.team);
+}
+
+export function computeBestThirdPlaceStandings(
+  matches: ParsedGroupMatch[],
+  groups: string[],
+): ThirdPlaceStanding[] {
+  const thirdPlaceTeams: ThirdPlaceStanding[] = [];
+
+  for (const group of groups) {
+    const standings = computeGroupStandings(group, matches);
+    const third = standings.find((s) => s.rank === 3);
+    if (third) {
+      thirdPlaceTeams.push({ ...third, group });
+    }
+  }
+
+  const sorted = [...thirdPlaceTeams].sort(compareThirdPlaceStandings);
+
+  return sorted.map((s, index) => ({
+    ...s,
+    rank: index + 1,
+  }));
 }

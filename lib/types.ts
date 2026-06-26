@@ -20,6 +20,10 @@ export interface TeamStanding {
   rank: number;
 }
 
+export interface ThirdPlaceStanding extends TeamStanding {
+  group: string;
+}
+
 export type GroupTab = "all" | string;
 
 export type TournamentTab = "all" | string;

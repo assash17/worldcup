@@ -3,10 +3,15 @@
 import { useSearchParams } from "next/navigation";
 import { Suspense, useMemo } from "react";
 import { GroupPanel } from "@/components/GroupPanel";
+import { ThirdPlaceStandingsTable } from "@/components/ThirdPlaceStandingsTable";
 import { Tabs } from "@/components/Tabs";
 import { formatWorldCupTitle } from "@/lib/openfootball/hosts";
 import { useWorldCupData } from "@/lib/hooks/useWorldCupData";
 import { useYearFromUrl, useYearNavigation } from "@/lib/hooks/useYearNavigation";
+import {
+  computeBestThirdPlaceStandings,
+  supportsBestThirdPlaceRanking,
+} from "@/lib/standings";
 import type { GroupTab } from "@/lib/types";
 
 function GroupsContent() {
@@ -30,6 +35,11 @@ function GroupsContent() {
       ...data.groups.map((group) => ({ id: group, label: group })),
     ];
   }, [data]);
+
+  const thirdPlaceStandings = useMemo(() => {
+    if (!data || !supportsBestThirdPlaceRanking(year)) return [];
+    return computeBestThirdPlaceStandings(data.groupMatches, data.groups);
+  }, [data, year]);
 
   if (loading) {
     return <p className="text-gray-500">Loading group stage...</p>;
@@ -67,17 +77,24 @@ function GroupsContent() {
       />
       <div className="mt-4">
         {activeTab === "all" ? (
-          <div className="grid gap-4 xl:grid-cols-2">
-            {data.groups.map((group) => (
-              <GroupPanel
-                key={group}
-                group={group}
-                matches={data.groupMatches}
-                year={year}
-                compact
-              />
-            ))}
-          </div>
+          <>
+            <div className="grid gap-4 xl:grid-cols-2">
+              {data.groups.map((group) => (
+                <GroupPanel
+                  key={group}
+                  group={group}
+                  matches={data.groupMatches}
+                  year={year}
+                  compact
+                />
+              ))}
+            </div>
+            {thirdPlaceStandings.length > 0 && (
+              <div className="mt-6">
+                <ThirdPlaceStandingsTable standings={thirdPlaceStandings} />
+              </div>
+            )}
+          </>
         ) : (
           <GroupPanel group={activeTab} matches={data.groupMatches} year={year} />
         )}
