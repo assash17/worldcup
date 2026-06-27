@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-26T03:39:26.179Z",
+  "generatedAt": "2026-06-27T03:25:21.325Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 172,
+      "totalGoals": 188,
       "totalMatches": 104,
-      "playedMatches": 58
+      "playedMatches": 64
     },
     {
       "year": 2022,
@@ -285,12 +285,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
-          "won": 2,
+          "played": 3,
+          "won": 3,
           "drawn": 0,
           "lost": 0,
-          "gf": 6,
-          "ga": 1,
+          "gf": 10,
+          "ga": 2,
           "matches": [
             {
               "year": 2026,
@@ -336,15 +336,15 @@
               "round": "Matchday 16",
               "opponent": "Norway",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 1,
+              "awayScore": 4,
+              "htHomeScore": 1,
+              "htAwayScore": 3,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -1855,12 +1855,12 @@
           ]
         }
       ],
-      "totalMatches": 75,
-      "totalWins": 41,
+      "totalMatches": 76,
+      "totalWins": 42,
       "totalDraws": 14,
       "totalLosses": 20,
-      "totalGF": 142,
-      "totalGA": 86
+      "totalGF": 146,
+      "totalGA": 87
     },
     "Mexico": {
       "team": "Mexico",
@@ -6689,7 +6689,7 @@
               "date": "2026-06-29",
               "time": "12:00 UTC-5",
               "round": "Round of 32",
-              "opponent": "2F",
+              "opponent": "Japan",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -10056,12 +10056,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 0,
           "drawn": 2,
-          "lost": 0,
+          "lost": 1,
           "gf": 3,
-          "ga": 3,
+          "ga": 4,
           "matches": [
             {
               "year": 2026,
@@ -10107,15 +10107,15 @@
               "round": "Matchday 16",
               "opponent": "Spain",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 1,
+              "htHomeScore": 0,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -11350,12 +11350,12 @@
           ]
         }
       ],
-      "totalMatches": 61,
+      "totalMatches": 62,
       "totalWins": 25,
       "totalDraws": 15,
-      "totalLosses": 21,
+      "totalLosses": 22,
       "totalGF": 92,
-      "totalGA": 79
+      "totalGA": 80
     },
     "United States": {
       "team": "United States",
@@ -12765,9 +12765,9 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 1,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 1,
           "gf": 2,
           "ga": 4,
@@ -12816,15 +12816,15 @@
               "round": "Matchday 15",
               "opponent": "Australia",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -13411,9 +13411,9 @@
           ]
         }
       ],
-      "totalMatches": 29,
+      "totalMatches": 30,
       "totalWins": 8,
-      "totalDraws": 10,
+      "totalDraws": 11,
       "totalLosses": 11,
       "totalGF": 32,
       "totalGA": 42
@@ -16409,11 +16409,11 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
-          "won": 1,
+          "played": 3,
+          "won": 2,
           "drawn": 1,
           "lost": 0,
-          "gf": 4,
+          "gf": 5,
           "ga": 0,
           "matches": [
             {
@@ -16460,15 +16460,15 @@
               "round": "Matchday 16",
               "opponent": "Uruguay",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 1,
+              "htHomeScore": 0,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -17871,11 +17871,11 @@
           ]
         }
       ],
-      "totalMatches": 69,
-      "totalWins": 32,
+      "totalMatches": 70,
+      "totalWins": 33,
       "totalDraws": 18,
       "totalLosses": 19,
-      "totalGF": 112,
+      "totalGF": 113,
       "totalGA": 75
     },
     "Hungary": {
@@ -19855,6 +19855,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-2",
+              "date": "2026-06-29",
+              "time": "19:00 UTC-6",
+              "round": "Round of 32",
+              "opponent": "Morocco",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -23480,12 +23498,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 2,
           "drawn": 0,
-          "lost": 0,
-          "gf": 7,
-          "ga": 3,
+          "lost": 1,
+          "gf": 8,
+          "ga": 7,
           "matches": [
             {
               "year": 2026,
@@ -23531,15 +23549,15 @@
               "round": "Matchday 16",
               "opponent": "France",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 1,
+              "awayScore": 4,
+              "htHomeScore": 1,
+              "htAwayScore": 3,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -23724,12 +23742,12 @@
           ]
         }
       ],
-      "totalMatches": 10,
+      "totalMatches": 11,
       "totalWins": 4,
       "totalDraws": 3,
-      "totalLosses": 3,
-      "totalGF": 14,
-      "totalGA": 11
+      "totalLosses": 4,
+      "totalGF": 15,
+      "totalGA": 15
     },
     "Poland": {
       "team": "Poland",
@@ -27388,12 +27406,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
-          "won": 0,
+          "played": 3,
+          "won": 1,
           "drawn": 0,
           "lost": 2,
-          "gf": 0,
-          "ga": 3,
+          "gf": 3,
+          "ga": 5,
           "matches": [
             {
               "year": 2026,
@@ -27439,15 +27457,15 @@
               "round": "Matchday 15",
               "opponent": "USA",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 3,
+              "awayScore": 2,
+              "htHomeScore": 2,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -27656,12 +27674,12 @@
           ]
         }
       ],
-      "totalMatches": 12,
-      "totalWins": 5,
+      "totalMatches": 13,
+      "totalWins": 6,
       "totalDraws": 1,
       "totalLosses": 6,
-      "totalGF": 20,
-      "totalGA": 20
+      "totalGF": 23,
+      "totalGA": 22
     },
     "South Korea": {
       "team": "South Korea",
@@ -32621,7 +32639,7 @@
               "date": "2026-06-29",
               "time": "19:00 UTC-6",
               "round": "Round of 32",
-              "opponent": "1F",
+              "opponent": "Netherlands",
               "home": false,
               "homeScore": null,
               "awayScore": null,
@@ -33266,9 +33284,9 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 1,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 1,
           "gf": 2,
           "ga": 2,
@@ -33317,6 +33335,24 @@
               "round": "Matchday 15",
               "opponent": "Paraguay",
               "home": false,
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-15",
+              "date": "2026-07-03",
+              "time": "13:00 UTC-5",
+              "round": "Round of 32",
+              "opponent": "2G",
+              "home": true,
               "homeScore": null,
               "awayScore": null,
               "htHomeScore": null,
@@ -33762,9 +33798,9 @@
           ]
         }
       ],
-      "totalMatches": 22,
+      "totalMatches": 23,
       "totalWins": 5,
-      "totalDraws": 4,
+      "totalDraws": 5,
       "totalLosses": 13,
       "totalGF": 19,
       "totalGA": 39
@@ -36370,12 +36406,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 0,
           "drawn": 0,
-          "lost": 2,
+          "lost": 3,
           "gf": 1,
-          "ga": 7,
+          "ga": 12,
           "matches": [
             {
               "year": 2026,
@@ -36421,15 +36457,15 @@
               "round": "Matchday 16",
               "opponent": "Senegal",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 5,
+              "awayScore": 0,
+              "htHomeScore": 1,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -36500,12 +36536,12 @@
           ]
         }
       ],
-      "totalMatches": 5,
+      "totalMatches": 6,
       "totalWins": 0,
       "totalDraws": 0,
-      "totalLosses": 5,
+      "totalLosses": 6,
       "totalGF": 2,
-      "totalGA": 11
+      "totalGA": 16
     },
     "Canada": {
       "team": "Canada",
@@ -38056,12 +38092,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 2,
           "drawn": 0,
-          "lost": 0,
-          "gf": 6,
-          "ga": 1,
+          "lost": 1,
+          "gf": 8,
+          "ga": 4,
           "matches": [
             {
               "year": 2026,
@@ -38107,15 +38143,15 @@
               "round": "Matchday 15",
               "opponent": "Turkey",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 3,
+              "awayScore": 2,
+              "htHomeScore": 2,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             },
             {
               "year": 2026,
@@ -38708,12 +38744,12 @@
           ]
         }
       ],
-      "totalMatches": 29,
+      "totalMatches": 30,
       "totalWins": 8,
       "totalDraws": 8,
-      "totalLosses": 13,
-      "totalGF": 32,
-      "totalGA": 38
+      "totalLosses": 14,
+      "totalGF": 34,
+      "totalGA": 41
     },
     "Russia": {
       "team": "Russia",
@@ -39720,9 +39756,9 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 0,
-          "drawn": 1,
+          "drawn": 2,
           "lost": 1,
           "gf": 1,
           "ga": 5,
@@ -39771,15 +39807,15 @@
               "round": "Matchday 16",
               "opponent": "Cape Verde",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -40198,9 +40234,9 @@
           ]
         }
       ],
-      "totalMatches": 21,
+      "totalMatches": 22,
       "totalWins": 4,
-      "totalDraws": 3,
+      "totalDraws": 4,
       "totalLosses": 14,
       "totalGF": 15,
       "totalGA": 49
@@ -41330,6 +41366,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-3",
+              "date": "2026-06-29",
+              "time": "12:00 UTC-5",
+              "round": "Round of 32",
+              "opponent": "Brazil",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -41881,11 +41935,11 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
-          "won": 0,
+          "played": 3,
+          "won": 1,
           "drawn": 0,
           "lost": 2,
-          "gf": 3,
+          "gf": 8,
           "ga": 6,
           "matches": [
             {
@@ -41932,15 +41986,15 @@
               "round": "Matchday 16",
               "opponent": "Iraq",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 5,
+              "awayScore": 0,
+              "htHomeScore": 1,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -42197,11 +42251,11 @@
           ]
         }
       ],
-      "totalMatches": 14,
-      "totalWins": 5,
+      "totalMatches": 15,
+      "totalWins": 6,
       "totalDraws": 3,
       "totalLosses": 6,
-      "totalGF": 19,
+      "totalGF": 24,
       "totalGA": 23
     },
     "Slovenia": {
@@ -44915,6 +44969,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-5",
+              "date": "2026-06-30",
+              "time": "12:00 UTC-5",
+              "round": "Round of 32",
+              "opponent": "2I",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         }
@@ -44932,9 +45004,9 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 0,
-          "drawn": 2,
+          "drawn": 3,
           "lost": 0,
           "gf": 2,
           "ga": 2,
@@ -44983,22 +45055,22 @@
               "round": "Matchday 16",
               "opponent": "Saudi Arabia",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         }
       ],
-      "totalMatches": 2,
+      "totalMatches": 3,
       "totalWins": 0,
-      "totalDraws": 2,
+      "totalDraws": 3,
       "totalLosses": 0,
       "totalGF": 2,
       "totalGA": 2
