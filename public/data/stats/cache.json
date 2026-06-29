@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-28T03:47:04.431Z",
+  "generatedAt": "2026-06-29T03:53:47.759Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 205,
+      "totalGoals": 216,
       "totalMatches": 104,
-      "playedMatches": 70
+      "playedMatches": 73
     },
     {
       "year": 2022,
@@ -345,6 +345,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-4",
+              "date": "2026-06-30",
+              "time": "17:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "Sweden",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -1935,7 +1953,7 @@
               "date": "2026-06-30",
               "time": "19:00 UTC-6",
               "round": "Round of 32",
-              "opponent": "3C/E/F/H/I",
+              "opponent": "Ecuador",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -3247,12 +3265,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
-          "won": 2,
+          "played": 3,
+          "won": 3,
           "drawn": 0,
           "lost": 0,
-          "gf": 5,
-          "ga": 0,
+          "gf": 8,
+          "ga": 1,
           "matches": [
             {
               "year": 2026,
@@ -3298,6 +3316,24 @@
               "round": "Matchday 17",
               "opponent": "Jordan",
               "home": false,
+              "homeScore": 1,
+              "awayScore": 3,
+              "htHomeScore": 0,
+              "htAwayScore": 2,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-13",
+              "date": "2026-07-03",
+              "time": "18:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "Cape Verde",
+              "home": true,
               "homeScore": null,
               "awayScore": null,
               "htHomeScore": null,
@@ -5111,12 +5147,12 @@
           ]
         }
       ],
-      "totalMatches": 90,
-      "totalWins": 49,
+      "totalMatches": 91,
+      "totalWins": 50,
       "totalDraws": 17,
       "totalLosses": 24,
-      "totalGF": 157,
-      "totalGA": 101
+      "totalGF": 160,
+      "totalGA": 102
     },
     "Chile": {
       "team": "Chile",
@@ -11662,6 +11698,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-9",
+              "date": "2026-07-01",
+              "time": "13:00 UTC-7",
+              "round": "Round of 32",
+              "opponent": "Senegal",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -12825,6 +12879,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-1",
+              "date": "2026-06-29",
+              "time": "16:30 UTC-4",
+              "round": "Round of 32",
+              "opponent": "Germany",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -13484,6 +13556,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-4",
+              "date": "2026-06-30",
+              "time": "17:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "France",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -14581,12 +14671,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 1,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 1,
-          "gf": 3,
-          "ga": 3,
+          "gf": 6,
+          "ga": 6,
           "matches": [
             {
               "year": 2026,
@@ -14631,6 +14721,24 @@
               "time": "21:00 UTC-5",
               "round": "Matchday 17",
               "opponent": "Algeria",
+              "home": false,
+              "homeScore": 3,
+              "awayScore": 3,
+              "htHomeScore": 1,
+              "htAwayScore": 1,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-11",
+              "date": "2026-07-02",
+              "time": "12:00 UTC-7",
+              "round": "Round of 32",
+              "opponent": "Spain",
               "home": false,
               "homeScore": null,
               "awayScore": null,
@@ -15281,12 +15389,12 @@
           ]
         }
       ],
-      "totalMatches": 31,
+      "totalMatches": 32,
       "totalWins": 13,
-      "totalDraws": 4,
+      "totalDraws": 5,
       "totalLosses": 14,
-      "totalGF": 46,
-      "totalGA": 50
+      "totalGF": 49,
+      "totalGA": 53
     },
     "Germany": {
       "team": "Germany",
@@ -15361,7 +15469,7 @@
               "date": "2026-06-29",
               "time": "16:30 UTC-4",
               "round": "Round of 32",
-              "opponent": "3A/B/C/D/F",
+              "opponent": "Paraguay",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -16469,6 +16577,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-11",
+              "date": "2026-07-02",
+              "time": "12:00 UTC-7",
+              "round": "Round of 32",
+              "opponent": "Austria",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -18639,6 +18765,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-15",
+              "date": "2026-07-03",
+              "time": "13:00 UTC-5",
+              "round": "Round of 32",
+              "opponent": "Australia",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -18885,7 +19029,7 @@
               "date": "2026-07-02",
               "time": "20:00 UTC-7",
               "round": "Round of 32",
-              "opponent": "3E/F/G/I/J",
+              "opponent": "Algeria",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -23558,6 +23702,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-5",
+              "date": "2026-06-30",
+              "time": "12:00 UTC-5",
+              "round": "Round of 32",
+              "opponent": "Ivory Coast",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -24618,6 +24780,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-7",
+              "date": "2026-07-01",
+              "time": "12:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "DR Congo",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -30340,6 +30520,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-14",
+              "date": "2026-07-03",
+              "time": "20:30 UTC-5",
+              "round": "Round of 32",
+              "opponent": "Ghana",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -31448,6 +31646,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-10",
+              "date": "2026-07-02",
+              "time": "19:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "Croatia",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -33351,7 +33567,7 @@
               "date": "2026-07-03",
               "time": "13:00 UTC-5",
               "round": "Round of 32",
-              "opponent": "2G",
+              "opponent": "Egypt",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -35552,12 +35768,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 1,
-          "drawn": 0,
+          "drawn": 1,
           "lost": 1,
-          "gf": 2,
-          "ga": 4,
+          "gf": 5,
+          "ga": 7,
           "matches": [
             {
               "year": 2026,
@@ -35603,6 +35819,24 @@
               "round": "Matchday 17",
               "opponent": "Austria",
               "home": true,
+              "homeScore": 3,
+              "awayScore": 3,
+              "htHomeScore": 1,
+              "htAwayScore": 1,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-12",
+              "date": "2026-07-02",
+              "time": "20:00 UTC-7",
+              "round": "Round of 32",
+              "opponent": "Switzerland",
+              "home": false,
               "homeScore": null,
               "awayScore": null,
               "htHomeScore": null,
@@ -35898,12 +36132,12 @@
           ]
         }
       ],
-      "totalMatches": 15,
+      "totalMatches": 16,
       "totalWins": 4,
-      "totalDraws": 3,
+      "totalDraws": 4,
       "totalLosses": 8,
-      "totalGF": 15,
-      "totalGA": 23
+      "totalGF": 18,
+      "totalGA": 26
     },
     "Kuwait": {
       "team": "Kuwait",
@@ -36548,12 +36782,12 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 3,
-          "won": 1,
+          "result": "Round of 32",
+          "played": 4,
+          "won": 2,
           "drawn": 1,
           "lost": 1,
-          "gf": 8,
+          "gf": 9,
           "ga": 3,
           "matches": [
             {
@@ -36618,15 +36852,15 @@
               "round": "Round of 32",
               "opponent": "South Africa",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 1,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -36763,11 +36997,11 @@
           ]
         }
       ],
-      "totalMatches": 9,
-      "totalWins": 1,
+      "totalMatches": 10,
+      "totalWins": 2,
       "totalDraws": 1,
       "totalLosses": 7,
-      "totalGF": 10,
+      "totalGF": 11,
       "totalGA": 15
     },
     "Denmark": {
@@ -38159,7 +38393,7 @@
               "date": "2026-07-01",
               "time": "17:00 UTC-7",
               "round": "Round of 32",
-              "opponent": "3B/E/F/I/J",
+              "opponent": "Bosnia & Herzegovina",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -40246,13 +40480,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 3,
+          "result": "Round of 32",
+          "played": 4,
           "won": 1,
           "drawn": 1,
-          "lost": 1,
+          "lost": 2,
           "gf": 2,
-          "ga": 3,
+          "ga": 4,
           "matches": [
             {
               "year": 2026,
@@ -40316,15 +40550,15 @@
               "round": "Round of 32",
               "opponent": "Canada",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 1,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -40527,12 +40761,12 @@
           ]
         }
       ],
-      "totalMatches": 12,
+      "totalMatches": 13,
       "totalWins": 3,
       "totalDraws": 5,
-      "totalLosses": 4,
+      "totalLosses": 5,
       "totalGF": 13,
-      "totalGA": 19
+      "totalGA": 20
     },
     "Jamaica": {
       "team": "Jamaica",
@@ -40677,6 +40911,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-10",
+              "date": "2026-07-02",
+              "time": "19:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "Portugal",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -41995,6 +42247,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-9",
+              "date": "2026-07-01",
+              "time": "13:00 UTC-7",
+              "round": "Round of 32",
+              "opponent": "Belgium",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -42544,6 +42814,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-6",
+              "date": "2026-06-30",
+              "time": "19:00 UTC-6",
+              "round": "Round of 32",
+              "opponent": "Mexico",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -43343,6 +43631,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-14",
+              "date": "2026-07-03",
+              "time": "20:30 UTC-5",
+              "round": "Round of 32",
+              "opponent": "Colombia",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -44815,6 +45121,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-8",
+              "date": "2026-07-01",
+              "time": "17:00 UTC-7",
+              "round": "Round of 32",
+              "opponent": "USA",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         }
@@ -44976,7 +45300,7 @@
               "date": "2026-06-30",
               "time": "12:00 UTC-5",
               "round": "Round of 32",
-              "opponent": "2I",
+              "opponent": "Norway",
               "home": true,
               "homeScore": null,
               "awayScore": null,
@@ -45064,6 +45388,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-13",
+              "date": "2026-07-03",
+              "time": "18:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "Argentina",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         }
@@ -45081,12 +45423,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 2,
+          "played": 3,
           "won": 0,
           "drawn": 0,
-          "lost": 2,
-          "gf": 2,
-          "ga": 5,
+          "lost": 3,
+          "gf": 3,
+          "ga": 8,
           "matches": [
             {
               "year": 2026,
@@ -45132,25 +45474,25 @@
               "round": "Matchday 17",
               "opponent": "Argentina",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 1,
+              "awayScore": 3,
+              "htHomeScore": 0,
+              "htAwayScore": 2,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         }
       ],
-      "totalMatches": 2,
+      "totalMatches": 3,
       "totalWins": 0,
       "totalDraws": 0,
-      "totalLosses": 2,
-      "totalGF": 2,
-      "totalGA": 5
+      "totalLosses": 3,
+      "totalGF": 3,
+      "totalGA": 8
     },
     "DR Congo": {
       "team": "DR Congo",
@@ -45218,6 +45560,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-7",
+              "date": "2026-07-01",
+              "time": "12:00 UTC-4",
+              "round": "Round of 32",
+              "opponent": "England",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         }
