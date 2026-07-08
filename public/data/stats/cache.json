@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-07T03:20:23.567Z",
+  "generatedAt": "2026-07-08T02:37:47.306Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 271,
+      "totalGoals": 276,
       "totalMatches": 104,
-      "playedMatches": 94
+      "playedMatches": 96
     },
     {
       "year": 2022,
@@ -3318,13 +3318,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 4,
-          "won": 4,
+          "result": "Round of 16",
+          "played": 5,
+          "won": 5,
           "drawn": 0,
           "lost": 0,
-          "gf": 11,
-          "ga": 3,
+          "gf": 14,
+          "ga": 5,
           "matches": [
             {
               "year": 2026,
@@ -3406,15 +3406,15 @@
               "round": "Round of 16",
               "opponent": "Egypt",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 3,
+              "awayScore": 2,
+              "htHomeScore": 0,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -5219,12 +5219,12 @@
           ]
         }
       ],
-      "totalMatches": 92,
-      "totalWins": 51,
+      "totalMatches": 93,
+      "totalWins": 52,
       "totalDraws": 17,
       "totalLosses": 24,
-      "totalGF": 163,
-      "totalGA": 104
+      "totalGF": 166,
+      "totalGA": 106
     },
     "Chile": {
       "team": "Chile",
@@ -11727,7 +11727,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Round of 16",
+          "result": "Group stage",
           "played": 5,
           "won": 3,
           "drawn": 2,
@@ -11824,6 +11824,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-25",
+              "date": "2026-07-10",
+              "time": "12:00 UTC-7",
+              "round": "Quarter-final",
+              "opponent": "Spain",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -16642,7 +16660,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Round of 16",
+          "result": "Group stage",
           "played": 5,
           "won": 4,
           "drawn": 1,
@@ -16739,6 +16757,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-25",
+              "date": "2026-07-10",
+              "time": "12:00 UTC-7",
+              "round": "Quarter-final",
+              "opponent": "Belgium",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -18848,13 +18884,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 4,
+          "result": "Round of 16",
+          "played": 5,
           "won": 1,
           "drawn": 3,
-          "lost": 0,
-          "gf": 6,
-          "ga": 4,
+          "lost": 1,
+          "gf": 8,
+          "ga": 7,
           "matches": [
             {
               "year": 2026,
@@ -18936,15 +18972,15 @@
               "round": "Round of 16",
               "opponent": "Argentina",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 3,
+              "awayScore": 2,
+              "htHomeScore": 0,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -19111,22 +19147,22 @@
           ]
         }
       ],
-      "totalMatches": 11,
+      "totalMatches": 12,
       "totalWins": 1,
       "totalDraws": 5,
-      "totalLosses": 5,
-      "totalGF": 11,
-      "totalGA": 16
+      "totalLosses": 6,
+      "totalGF": 13,
+      "totalGA": 19
     },
     "Switzerland": {
       "team": "Switzerland",
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 4,
+          "result": "Round of 16",
+          "played": 5,
           "won": 3,
-          "drawn": 1,
+          "drawn": 2,
           "lost": 0,
           "gf": 9,
           "ga": 3,
@@ -19211,15 +19247,15 @@
               "round": "Round of 16",
               "opponent": "Colombia",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
-              "etHomeScore": null,
-              "etAwayScore": null,
-              "homePenalties": null,
-              "awayPenalties": null,
-              "played": false
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": 0,
+              "etAwayScore": 0,
+              "homePenalties": 4,
+              "awayPenalties": 3,
+              "played": true
             }
           ]
         },
@@ -20106,9 +20142,9 @@
           ]
         }
       ],
-      "totalMatches": 45,
+      "totalMatches": 46,
       "totalWins": 17,
-      "totalDraws": 9,
+      "totalDraws": 10,
       "totalLosses": 19,
       "totalGF": 64,
       "totalGA": 76
@@ -30711,10 +30747,10 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 4,
+          "result": "Round of 16",
+          "played": 5,
           "won": 3,
-          "drawn": 1,
+          "drawn": 2,
           "lost": 0,
           "gf": 5,
           "ga": 1,
@@ -30799,15 +30835,15 @@
               "round": "Round of 16",
               "opponent": "Switzerland",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
-              "etHomeScore": null,
-              "etAwayScore": null,
-              "homePenalties": null,
-              "awayPenalties": null,
-              "played": false
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": 0,
+              "etAwayScore": 0,
+              "homePenalties": 4,
+              "awayPenalties": 3,
+              "played": true
             }
           ]
         },
@@ -31280,9 +31316,9 @@
           ]
         }
       ],
-      "totalMatches": 26,
+      "totalMatches": 27,
       "totalWins": 12,
-      "totalDraws": 4,
+      "totalDraws": 5,
       "totalLosses": 10,
       "totalGF": 37,
       "totalGA": 31
