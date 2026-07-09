@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-08T02:37:47.306Z",
+  "generatedAt": "2026-07-09T02:56:58.273Z",
   "editions": [
     {
       "year": 2026,
@@ -3318,7 +3318,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Round of 16",
+          "result": "Group stage",
           "played": 5,
           "won": 5,
           "drawn": 0,
@@ -3415,6 +3415,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-27",
+              "date": "2026-07-11",
+              "time": "20:00 UTC-5",
+              "round": "Quarter-final",
+              "opponent": "Switzerland",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -19159,7 +19177,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Round of 16",
+          "result": "Group stage",
           "played": 5,
           "won": 3,
           "drawn": 2,
@@ -19256,6 +19274,24 @@
               "homePenalties": 4,
               "awayPenalties": 3,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-27",
+              "date": "2026-07-11",
+              "time": "20:00 UTC-5",
+              "round": "Quarter-final",
+              "opponent": "Argentina",
+              "home": false,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
