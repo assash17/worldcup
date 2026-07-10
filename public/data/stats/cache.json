@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-09T02:56:58.273Z",
+  "generatedAt": "2026-07-10T03:16:24.945Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 276,
+      "totalGoals": 278,
       "totalMatches": 104,
-      "playedMatches": 96
+      "playedMatches": 97
     },
     {
       "year": 2022,
@@ -284,12 +284,12 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 5,
-          "won": 5,
+          "result": "Quarter-finals",
+          "played": 6,
+          "won": 6,
           "drawn": 0,
           "lost": 0,
-          "gf": 14,
+          "gf": 16,
           "ga": 2,
           "matches": [
             {
@@ -390,15 +390,15 @@
               "round": "Quarter-final",
               "opponent": "Morocco",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 2,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -1909,11 +1909,11 @@
           ]
         }
       ],
-      "totalMatches": 78,
-      "totalWins": 44,
+      "totalMatches": 79,
+      "totalWins": 45,
       "totalDraws": 14,
       "totalLosses": 20,
-      "totalGF": 150,
+      "totalGF": 152,
       "totalGA": 87
     },
     "Mexico": {
@@ -33147,13 +33147,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 5,
+          "result": "Quarter-finals",
+          "played": 6,
           "won": 3,
           "drawn": 2,
-          "lost": 0,
+          "lost": 1,
           "gf": 10,
-          "ga": 4,
+          "ga": 6,
           "matches": [
             {
               "year": 2026,
@@ -33253,15 +33253,15 @@
               "round": "Quarter-final",
               "opponent": "France",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 2,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -33752,12 +33752,12 @@
           ]
         }
       ],
-      "totalMatches": 28,
+      "totalMatches": 29,
       "totalWins": 8,
       "totalDraws": 9,
-      "totalLosses": 11,
+      "totalLosses": 12,
       "totalGF": 30,
-      "totalGA": 31
+      "totalGA": 33
     },
     "East Germany": {
       "team": "East Germany",
