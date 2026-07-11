@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-10T03:16:24.945Z",
+  "generatedAt": "2026-07-11T02:35:14.044Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 278,
+      "totalGoals": 281,
       "totalMatches": 104,
-      "playedMatches": 97
+      "playedMatches": 98
     },
     {
       "year": 2022,
@@ -11745,13 +11745,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 5,
+          "result": "Quarter-finals",
+          "played": 6,
           "won": 3,
           "drawn": 2,
-          "lost": 0,
-          "gf": 13,
-          "ga": 5,
+          "lost": 1,
+          "gf": 14,
+          "ga": 7,
           "matches": [
             {
               "year": 2026,
@@ -11851,15 +11851,15 @@
               "round": "Quarter-final",
               "opponent": "Spain",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 2,
+              "awayScore": 1,
+              "htHomeScore": 1,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -12950,12 +12950,12 @@
           ]
         }
       ],
-      "totalMatches": 56,
+      "totalMatches": 57,
       "totalWins": 24,
       "totalDraws": 12,
-      "totalLosses": 20,
-      "totalGF": 82,
-      "totalGA": 79
+      "totalLosses": 21,
+      "totalGF": 83,
+      "totalGA": 81
     },
     "Paraguay": {
       "team": "Paraguay",
@@ -16678,13 +16678,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 5,
-          "won": 4,
+          "result": "Quarter-finals",
+          "played": 6,
+          "won": 5,
           "drawn": 1,
           "lost": 0,
-          "gf": 9,
-          "ga": 0,
+          "gf": 11,
+          "ga": 1,
           "matches": [
             {
               "year": 2026,
@@ -16784,15 +16784,15 @@
               "round": "Quarter-final",
               "opponent": "Belgium",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 2,
+              "awayScore": 1,
+              "htHomeScore": 1,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -18195,12 +18195,12 @@
           ]
         }
       ],
-      "totalMatches": 72,
-      "totalWins": 35,
+      "totalMatches": 73,
+      "totalWins": 36,
       "totalDraws": 18,
       "totalLosses": 19,
-      "totalGF": 117,
-      "totalGA": 75
+      "totalGF": 119,
+      "totalGA": 76
     },
     "Hungary": {
       "team": "Hungary",
