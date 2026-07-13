@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-12T02:42:52.453Z",
+  "generatedAt": "2026-07-13T02:43:56.751Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 283,
+      "totalGoals": 285,
       "totalMatches": 104,
-      "playedMatches": 99
+      "playedMatches": 100
     },
     {
       "year": 2022,
@@ -3337,12 +3337,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 5,
-          "won": 5,
+          "played": 6,
+          "won": 6,
           "drawn": 0,
           "lost": 0,
-          "gf": 14,
-          "ga": 5,
+          "gf": 17,
+          "ga": 6,
           "matches": [
             {
               "year": 2026,
@@ -3442,6 +3442,24 @@
               "round": "Quarter-final",
               "opponent": "Switzerland",
               "home": true,
+              "homeScore": 1,
+              "awayScore": 1,
+              "htHomeScore": 1,
+              "htAwayScore": 0,
+              "etHomeScore": 3,
+              "etAwayScore": 1,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-29",
+              "date": "2026-07-15",
+              "time": "15:00 UTC-4",
+              "round": "Semi-final",
+              "opponent": "England",
+              "home": false,
               "homeScore": null,
               "awayScore": null,
               "htHomeScore": null,
@@ -5255,12 +5273,12 @@
           ]
         }
       ],
-      "totalMatches": 93,
-      "totalWins": 52,
+      "totalMatches": 94,
+      "totalWins": 53,
       "totalDraws": 17,
       "totalLosses": 24,
-      "totalGF": 166,
-      "totalGA": 106
+      "totalGF": 169,
+      "totalGA": 107
     },
     "Chile": {
       "team": "Chile",
@@ -19213,13 +19231,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 5,
+          "result": "Quarter-finals",
+          "played": 6,
           "won": 3,
           "drawn": 2,
-          "lost": 0,
-          "gf": 9,
-          "ga": 3,
+          "lost": 1,
+          "gf": 10,
+          "ga": 6,
           "matches": [
             {
               "year": 2026,
@@ -19319,15 +19337,15 @@
               "round": "Quarter-final",
               "opponent": "Argentina",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
-              "etHomeScore": null,
-              "etAwayScore": null,
+              "homeScore": 1,
+              "awayScore": 1,
+              "htHomeScore": 1,
+              "htAwayScore": 0,
+              "etHomeScore": 3,
+              "etAwayScore": 1,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -20214,12 +20232,12 @@
           ]
         }
       ],
-      "totalMatches": 46,
+      "totalMatches": 47,
       "totalWins": 17,
       "totalDraws": 10,
-      "totalLosses": 19,
-      "totalGF": 64,
-      "totalGA": 76
+      "totalLosses": 20,
+      "totalGF": 65,
+      "totalGA": 79
     },
     "Netherlands": {
       "team": "Netherlands",
@@ -25043,7 +25061,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Quarter-finals",
+          "result": "Group stage",
           "played": 6,
           "won": 5,
           "drawn": 1,
@@ -25158,6 +25176,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-29",
+              "date": "2026-07-15",
+              "time": "15:00 UTC-4",
+              "round": "Semi-final",
+              "opponent": "Argentina",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
