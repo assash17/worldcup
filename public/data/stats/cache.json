@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-14T02:27:03.806Z",
+  "generatedAt": "2026-07-15T02:35:55.995Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 285,
+      "totalGoals": 287,
       "totalMatches": 104,
-      "playedMatches": 100
+      "playedMatches": 101
     },
     {
       "year": 2022,
@@ -284,13 +284,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 6,
+          "result": "Semi-finals",
+          "played": 7,
           "won": 6,
           "drawn": 0,
-          "lost": 0,
+          "lost": 1,
           "gf": 16,
-          "ga": 2,
+          "ga": 4,
           "matches": [
             {
               "year": 2026,
@@ -408,15 +408,15 @@
               "round": "Semi-final",
               "opponent": "Spain",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 2,
+              "htHomeScore": 0,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -1927,12 +1927,12 @@
           ]
         }
       ],
-      "totalMatches": 79,
+      "totalMatches": 80,
       "totalWins": 45,
       "totalDraws": 14,
-      "totalLosses": 20,
+      "totalLosses": 21,
       "totalGF": 152,
-      "totalGA": 87
+      "totalGA": 89
     },
     "Mexico": {
       "team": "Mexico",
@@ -16714,12 +16714,12 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 6,
-          "won": 5,
+          "result": "Semi-finals",
+          "played": 7,
+          "won": 6,
           "drawn": 1,
           "lost": 0,
-          "gf": 11,
+          "gf": 13,
           "ga": 1,
           "matches": [
             {
@@ -16838,15 +16838,15 @@
               "round": "Semi-final",
               "opponent": "France",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 2,
+              "htHomeScore": 0,
+              "htAwayScore": 1,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -18249,11 +18249,11 @@
           ]
         }
       ],
-      "totalMatches": 73,
-      "totalWins": 36,
+      "totalMatches": 74,
+      "totalWins": 37,
       "totalDraws": 18,
       "totalLosses": 19,
-      "totalGF": 119,
+      "totalGF": 121,
       "totalGA": 76
     },
     "Hungary": {
