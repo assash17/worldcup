@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-15T02:35:55.995Z",
+  "generatedAt": "2026-07-16T02:32:53.996Z",
   "editions": [
     {
       "year": 2026,
@@ -9,9 +9,9 @@
       "thirdPlace": null,
       "fourthPlace": null,
       "teamCount": 48,
-      "totalGoals": 287,
+      "totalGoals": 290,
       "totalMatches": 104,
-      "playedMatches": 101
+      "playedMatches": 102
     },
     {
       "year": 2022,
@@ -284,7 +284,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Semi-finals",
+          "result": "Group stage",
           "played": 7,
           "won": 6,
           "drawn": 0,
@@ -417,6 +417,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-30",
+              "date": "2026-07-18",
+              "time": "17:00 UTC-4",
+              "round": "Match for third place",
+              "opponent": "England",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -3337,12 +3355,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 6,
-          "won": 6,
+          "played": 7,
+          "won": 7,
           "drawn": 0,
           "lost": 0,
-          "gf": 17,
-          "ga": 6,
+          "gf": 19,
+          "ga": 7,
           "matches": [
             {
               "year": 2026,
@@ -3459,6 +3477,24 @@
               "time": "15:00 UTC-4",
               "round": "Semi-final",
               "opponent": "England",
+              "home": false,
+              "homeScore": 1,
+              "awayScore": 2,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-31",
+              "date": "2026-07-19",
+              "time": "15:00 UTC-4",
+              "round": "Final",
+              "opponent": "Spain",
               "home": false,
               "homeScore": null,
               "awayScore": null,
@@ -5273,12 +5309,12 @@
           ]
         }
       ],
-      "totalMatches": 94,
-      "totalWins": 53,
+      "totalMatches": 95,
+      "totalWins": 54,
       "totalDraws": 17,
       "totalLosses": 24,
-      "totalGF": 169,
-      "totalGA": 107
+      "totalGF": 171,
+      "totalGA": 108
     },
     "Chile": {
       "team": "Chile",
@@ -16714,7 +16750,7 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Semi-finals",
+          "result": "Group stage",
           "played": 7,
           "won": 6,
           "drawn": 1,
@@ -16847,6 +16883,24 @@
               "homePenalties": null,
               "awayPenalties": null,
               "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-31",
+              "date": "2026-07-19",
+              "time": "15:00 UTC-4",
+              "round": "Final",
+              "opponent": "Argentina",
+              "home": true,
+              "homeScore": null,
+              "awayScore": null,
+              "htHomeScore": null,
+              "htAwayScore": null,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": false
             }
           ]
         },
@@ -25062,12 +25116,12 @@
         {
           "year": 2026,
           "result": "Group stage",
-          "played": 6,
+          "played": 7,
           "won": 5,
           "drawn": 1,
-          "lost": 0,
-          "gf": 13,
-          "ga": 6,
+          "lost": 1,
+          "gf": 14,
+          "ga": 8,
           "matches": [
             {
               "year": 2026,
@@ -25185,6 +25239,24 @@
               "round": "Semi-final",
               "opponent": "Argentina",
               "home": true,
+              "homeScore": 1,
+              "awayScore": 2,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": null,
+              "etAwayScore": null,
+              "homePenalties": null,
+              "awayPenalties": null,
+              "played": true
+            },
+            {
+              "year": 2026,
+              "matchId": "k-30",
+              "date": "2026-07-18",
+              "time": "17:00 UTC-4",
+              "round": "Match for third place",
+              "opponent": "France",
+              "home": false,
               "homeScore": null,
               "awayScore": null,
               "htHomeScore": null,
@@ -26722,12 +26794,12 @@
           ]
         }
       ],
-      "totalMatches": 80,
+      "totalMatches": 81,
       "totalWins": 37,
       "totalDraws": 23,
-      "totalLosses": 20,
-      "totalGF": 117,
-      "totalGA": 74
+      "totalLosses": 21,
+      "totalGF": 118,
+      "totalGA": 76
     },
     "West Germany": {
       "team": "West Germany",
