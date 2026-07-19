@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-07-18T02:26:06.762Z",
+  "generatedAt": "2026-07-19T02:39:30.600Z",
   "editions": [
     {
       "year": 2026,
       "hosts": "Canada, Mexico & United States",
       "champion": null,
       "runnerUp": null,
-      "thirdPlace": null,
-      "fourthPlace": null,
+      "thirdPlace": "England",
+      "fourthPlace": "France",
       "teamCount": 48,
-      "totalGoals": 290,
+      "totalGoals": 300,
       "totalMatches": 104,
-      "playedMatches": 102
+      "playedMatches": 103
     },
     {
       "year": 2022,
@@ -284,13 +284,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 7,
+          "result": "Fourth place",
+          "played": 8,
           "won": 6,
           "drawn": 0,
-          "lost": 1,
-          "gf": 16,
-          "ga": 4,
+          "lost": 2,
+          "gf": 20,
+          "ga": 10,
           "matches": [
             {
               "year": 2026,
@@ -426,15 +426,15 @@
               "round": "Match for third place",
               "opponent": "England",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 4,
+              "awayScore": 6,
+              "htHomeScore": 0,
+              "htAwayScore": 4,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -1945,12 +1945,12 @@
           ]
         }
       ],
-      "totalMatches": 80,
+      "totalMatches": 81,
       "totalWins": 45,
       "totalDraws": 14,
-      "totalLosses": 21,
-      "totalGF": 152,
-      "totalGA": 89
+      "totalLosses": 22,
+      "totalGF": 156,
+      "totalGA": 95
     },
     "Mexico": {
       "team": "Mexico",
@@ -25115,13 +25115,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 7,
-          "won": 5,
+          "result": "Third place",
+          "played": 8,
+          "won": 6,
           "drawn": 1,
           "lost": 1,
-          "gf": 14,
-          "ga": 8,
+          "gf": 20,
+          "ga": 12,
           "matches": [
             {
               "year": 2026,
@@ -25257,15 +25257,15 @@
               "round": "Match for third place",
               "opponent": "France",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
+              "homeScore": 4,
+              "awayScore": 6,
+              "htHomeScore": 0,
+              "htAwayScore": 4,
               "etHomeScore": null,
               "etAwayScore": null,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -26794,12 +26794,12 @@
           ]
         }
       ],
-      "totalMatches": 81,
-      "totalWins": 37,
+      "totalMatches": 82,
+      "totalWins": 38,
       "totalDraws": 23,
       "totalLosses": 21,
-      "totalGF": 118,
-      "totalGA": 76
+      "totalGF": 124,
+      "totalGA": 80
     },
     "West Germany": {
       "team": "West Germany",
