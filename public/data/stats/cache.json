@@ -1,17 +1,17 @@
 {
-  "generatedAt": "2026-07-20T03:40:22.024Z",
+  "generatedAt": "2026-07-21T02:37:01.094Z",
   "editions": [
     {
       "year": 2026,
       "hosts": "Canada, Mexico & United States",
-      "champion": null,
-      "runnerUp": null,
+      "champion": "Spain",
+      "runnerUp": "Argentina",
       "thirdPlace": "England",
       "fourthPlace": "France",
       "teamCount": 48,
       "totalGoals": 300,
       "totalMatches": 104,
-      "playedMatches": 103
+      "playedMatches": 104
     },
     {
       "year": 2022,
@@ -3354,13 +3354,13 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 7,
+          "result": "Runner-up",
+          "played": 8,
           "won": 7,
           "drawn": 0,
-          "lost": 0,
+          "lost": 1,
           "gf": 19,
-          "ga": 7,
+          "ga": 8,
           "matches": [
             {
               "year": 2026,
@@ -3496,15 +3496,15 @@
               "round": "Final",
               "opponent": "Spain",
               "home": false,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
-              "etHomeScore": null,
-              "etAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": 1,
+              "etAwayScore": 0,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -5309,12 +5309,12 @@
           ]
         }
       ],
-      "totalMatches": 95,
+      "totalMatches": 96,
       "totalWins": 54,
       "totalDraws": 17,
-      "totalLosses": 24,
+      "totalLosses": 25,
       "totalGF": 171,
-      "totalGA": 108
+      "totalGA": 109
     },
     "Chile": {
       "team": "Chile",
@@ -16750,12 +16750,12 @@
       "appearances": [
         {
           "year": 2026,
-          "result": "Group stage",
-          "played": 7,
-          "won": 6,
+          "result": "Winner",
+          "played": 8,
+          "won": 7,
           "drawn": 1,
           "lost": 0,
-          "gf": 13,
+          "gf": 14,
           "ga": 1,
           "matches": [
             {
@@ -16892,15 +16892,15 @@
               "round": "Final",
               "opponent": "Argentina",
               "home": true,
-              "homeScore": null,
-              "awayScore": null,
-              "htHomeScore": null,
-              "htAwayScore": null,
-              "etHomeScore": null,
-              "etAwayScore": null,
+              "homeScore": 0,
+              "awayScore": 0,
+              "htHomeScore": 0,
+              "htAwayScore": 0,
+              "etHomeScore": 1,
+              "etAwayScore": 0,
               "homePenalties": null,
               "awayPenalties": null,
-              "played": false
+              "played": true
             }
           ]
         },
@@ -18303,11 +18303,11 @@
           ]
         }
       ],
-      "totalMatches": 74,
-      "totalWins": 37,
+      "totalMatches": 75,
+      "totalWins": 38,
       "totalDraws": 18,
       "totalLosses": 19,
-      "totalGF": 121,
+      "totalGF": 122,
       "totalGA": 76
     },
     "Hungary": {
