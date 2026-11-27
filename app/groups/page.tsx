@@ -5,7 +5,9 @@ import { Suspense, useMemo } from "react";
 import { GroupPanel } from "@/components/GroupPanel";
 import { ThirdPlaceStandingsTable } from "@/components/ThirdPlaceStandingsTable";
 import { Tabs } from "@/components/Tabs";
+import { EditionStatusBadge } from "@/components/EditionStatusBadge";
 import { formatWorldCupTitle } from "@/lib/openfootball/hosts";
+import { editionStatusFromWorldCupData } from "@/lib/stats/editions";
 import { useWorldCupData } from "@/lib/hooks/useWorldCupData";
 import { useYearFromUrl, useYearNavigation } from "@/lib/hooks/useYearNavigation";
 import {
@@ -67,8 +69,9 @@ function GroupsContent() {
       <h2 className="mb-1 text-2xl font-bold text-[var(--wc-green)]">
         Group Stage
       </h2>
-      <p className="mb-4 text-sm text-gray-500">
-        {formatWorldCupTitle(year, data.hosts)}
+      <p className="mb-4 flex flex-wrap items-center gap-2 text-sm text-gray-500">
+        <span>{formatWorldCupTitle(year, data.hosts)}</span>
+        <EditionStatusBadge status={editionStatusFromWorldCupData(data)} />
       </p>
       <Tabs
         tabs={tabs}

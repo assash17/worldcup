@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { EditionStatusBadge } from "./EditionStatusBadge";
 import { TeamName } from "./TeamName";
 import type { EditionSummary } from "@/lib/stats/types";
 
@@ -13,6 +14,7 @@ export function EditionTimeline({ editions }: EditionTimelineProps) {
         <thead>
           <tr className="border-b border-gray-200 text-gray-500">
             <th className="py-2 pr-4">Year</th>
+            <th className="py-2 pr-4">Status</th>
             <th className="py-2 pr-4">Host</th>
             <th className="py-2 pr-4">Champion</th>
             <th className="py-2 pr-4">Runner-up</th>
@@ -32,6 +34,9 @@ export function EditionTimeline({ editions }: EditionTimelineProps) {
                 >
                   {edition.year}
                 </Link>
+              </td>
+              <td className="py-3 pr-4">
+                <EditionStatusBadge status={edition.status} />
               </td>
               <td className="py-3 pr-4">{edition.hosts}</td>
               <td className="py-3 pr-4">

@@ -1,7 +1,9 @@
 "use client";
 
 import Link from "next/link";
-import { useParams } from "next/navigation";
+import { useParams, useRouter, useSearchParams } from "next/navigation";
+import { useEffect } from "react";
+import { useWorldCupYears } from "@/lib/hooks/useWorldCupYears";
 import { MatchDetailView } from "@/components/MatchDetailView";
 import { formatWorldCupTitle } from "@/lib/openfootball/hosts";
 import { useWorldCupData } from "@/lib/hooks/useWorldCupData";
@@ -9,9 +11,20 @@ import { useYearFromUrl } from "@/lib/hooks/useYearNavigation";
 
 export function MatchDetailPage() {
   const params = useParams<{ id: string }>();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const { defaultYear } = useWorldCupYears();
   const year = useYearFromUrl();
-  const { data, loading, error } = useWorldCupData(year);
   const matchId = decodeURIComponent(params.id);
+
+  useEffect(() => {
+    if (!searchParams.get("year")) {
+      const next = new URLSearchParams(searchParams.toString());
+      next.set("year", String(defaultYear));
+      router.replace(`/match/${encodeURIComponent(matchId)}?${next.toString()}`);
+    }
+  }, [searchParams, defaultYear, router, matchId]);
+  const { data, loading, error } = useWorldCupData(year);
   const match = data?.matchesById[matchId];
 
   if (loading) {

@@ -1,6 +1,11 @@
-import { computeGroupStandings } from "@/lib/standings";
+import {
+  getEditionStatus,
+  isEditionComplete,
+} from "@/lib/openfootball/edition-status";
+import { countResolvedMatches } from "@/lib/openfootball/match-resolution";
 import type { WorldCupData } from "@/lib/openfootball/types";
 import type { WorldCupYear } from "@/lib/openfootball/years";
+import { computeGroupStandings } from "@/lib/standings";
 import type { EditionSummary } from "./types";
 import { collectTeams, countTotalGoals, getLoser } from "./helpers";
 
@@ -38,17 +43,36 @@ export function extractEditionSummary(data: WorldCupData): EditionSummary {
   }
 
   const playedMatches = data.matches.filter((m) => m.played).length;
+  const resolvedMatches = countResolvedMatches(data.matches);
+  const totalMatches = data.matches.length;
+  const status = getEditionStatus(data.year, resolvedMatches, totalMatches);
+  const complete = isEditionComplete(data.year, resolvedMatches, totalMatches);
+
+  if (!complete) {
+    champion = null;
+    runnerUp = null;
+    thirdPlace = null;
+    fourthPlace = null;
+  }
 
   return {
     year: data.year as WorldCupYear,
     hosts: data.hosts,
+    status,
+    complete,
     champion,
     runnerUp,
     thirdPlace,
     fourthPlace,
     teamCount: collectTeams(data.matches).length,
     totalGoals: countTotalGoals(data.matches),
-    totalMatches: data.matches.length,
+    totalMatches,
     playedMatches,
+    resolvedMatches,
   };
+}
+
+export function editionStatusFromWorldCupData(data: WorldCupData) {
+  const resolvedMatches = countResolvedMatches(data.matches);
+  return getEditionStatus(data.year, resolvedMatches, data.matches.length);
 }

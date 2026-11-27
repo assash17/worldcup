@@ -7,10 +7,13 @@ import {
   parseMatchday,
 } from "./rounds";
 import { resolveWorldCupHosts } from "./hosts";
+import { isOpenFootballMatchCanceled } from "./match-resolution";
 import type {
   GoalEvent,
   OpenFootballGoal,
   OpenFootballMatch,
+  OpenFootballScore,
+  OpenFootballScoreTuple,
   OpenFootballWorldCup,
   ParsedGroupMatch,
   ParsedKnockoutMatch,
@@ -18,13 +21,20 @@ import type {
   WorldCupData,
 } from "./types";
 
-function parseScores(score?: {
-  ft?: [number, number];
-  ht?: [number, number];
-  et?: [number, number];
-  p?: [number, number];
-}) {
-  if (!score?.ft) {
+function normalizeScoreInput(
+  score?: OpenFootballScore | OpenFootballScoreTuple,
+): OpenFootballScore | undefined {
+  if (score == null) return undefined;
+  if (Array.isArray(score)) {
+    if (score.length < 2) return undefined;
+    return { ft: [score[0], score[1]] };
+  }
+  return score;
+}
+
+function parseScores(score?: OpenFootballScore | OpenFootballScoreTuple) {
+  const normalized = normalizeScoreInput(score);
+  if (!normalized?.ft) {
     return {
       homeScore: null,
       awayScore: null,
@@ -39,14 +49,14 @@ function parseScores(score?: {
   }
 
   return {
-    homeScore: score.ft[0],
-    awayScore: score.ft[1],
-    htHomeScore: score.ht?.[0] ?? null,
-    htAwayScore: score.ht?.[1] ?? null,
-    etHomeScore: score.et?.[0] ?? null,
-    etAwayScore: score.et?.[1] ?? null,
-    homePenalties: score.p?.[0] ?? null,
-    awayPenalties: score.p?.[1] ?? null,
+    homeScore: normalized.ft[0],
+    awayScore: normalized.ft[1],
+    htHomeScore: normalized.ht?.[0] ?? null,
+    htAwayScore: normalized.ht?.[1] ?? null,
+    etHomeScore: normalized.et?.[0] ?? null,
+    etAwayScore: normalized.et?.[1] ?? null,
+    homePenalties: normalized.p?.[0] ?? null,
+    awayPenalties: normalized.p?.[1] ?? null,
     played: true,
   };
 }
@@ -110,6 +120,7 @@ function buildMatch(
   >,
 ): ParsedMatch {
   const scores = parseScores(raw.score);
+  const canceled = isOpenFootballMatchCanceled(raw);
 
   return {
     id,
@@ -126,16 +137,19 @@ function buildMatch(
     goalsHome: parseGoals(raw.goals1),
     goalsAway: parseGoals(raw.goals2),
     ...scores,
-    winner: getWinner(
+    canceled,
+    winner: canceled
+      ? null
+      : getWinner(
       raw.team1,
       raw.team2,
       scores.homeScore,
       scores.awayScore,
       scores.etHomeScore,
       scores.etAwayScore,
-      scores.homePenalties,
-      scores.awayPenalties,
-    ),
+          scores.homePenalties,
+          scores.awayPenalties,
+        ),
     order: extra.order,
   };
 }

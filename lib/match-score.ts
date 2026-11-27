@@ -8,6 +8,7 @@ export interface MatchScoreInput {
   homePenalties?: number | null;
   awayPenalties?: number | null;
   played: boolean;
+  canceled?: boolean;
 }
 
 export function getFinalDisplayScores(
@@ -149,6 +150,7 @@ export function formatScoreDisplay(
 }
 
 export function formatFinalScoreDisplay(scores: MatchScoreInput): string {
+  if (scores.canceled) return "Canceled";
   const final = getFinalDisplayScores(scores);
   if (!final) return "-";
   return formatScoreDisplay(final.home, final.away, true);
@@ -171,7 +173,9 @@ export function toMatchScoreInput(match: MatchScoreInput): MatchScoreInput {
   return match;
 }
 
-export function toHomeAwayScoreInput(match: MatchScoreInput): MatchScoreInput {
+export function toHomeAwayScoreInput(
+  match: MatchScoreInput & { canceled?: boolean },
+): MatchScoreInput {
   return {
     homeScore: match.homeScore,
     awayScore: match.awayScore,
@@ -182,6 +186,7 @@ export function toHomeAwayScoreInput(match: MatchScoreInput): MatchScoreInput {
     homePenalties: match.homePenalties,
     awayPenalties: match.awayPenalties,
     played: match.played,
+    canceled: match.canceled,
   };
 }
 

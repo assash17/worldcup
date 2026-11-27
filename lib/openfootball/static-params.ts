@@ -1,16 +1,11 @@
-import { fetchWorldCupData } from "./fetch";
-import { loadWorldCupYearsManifestSync } from "./manifest-server";
+import { readFileSync } from "fs";
+import { join } from "path";
 
-export async function getAllMatchIds(): Promise<{ id: string }[]> {
-  const manifest = loadWorldCupYearsManifestSync();
-  const ids = new Set<string>();
-
-  for (const edition of manifest.years) {
-    const data = await fetchWorldCupData(edition.year);
-    for (const match of data.matches) {
-      ids.add(match.id);
-    }
+export function getAllMatchIds(): { id: string }[] {
+  const path = join(process.cwd(), "public", "data", "match-ids.json");
+  try {
+    return JSON.parse(readFileSync(path, "utf-8")) as { id: string }[];
+  } catch {
+    return [];
   }
-
-  return [...ids].map((id) => ({ id }));
 }

@@ -1,8 +1,11 @@
+import type { EditionStatus } from "@/lib/openfootball/edition-status";
 import type { WorldCupYear } from "@/lib/openfootball/years";
 
 export interface EditionSummary {
   year: WorldCupYear;
   hosts: string;
+  status: EditionStatus;
+  complete: boolean;
   champion: string | null;
   runnerUp: string | null;
   thirdPlace: string | null;
@@ -11,6 +14,7 @@ export interface EditionSummary {
   totalGoals: number;
   totalMatches: number;
   playedMatches: number;
+  resolvedMatches: number;
 }
 
 export interface TeamMatchRecord {

@@ -13,17 +13,21 @@ export interface OpenFootballScore {
   p?: [number, number];
 }
 
+/** Legacy openfootball format: full-time score as [home, away]. */
+export type OpenFootballScoreTuple = [number, number];
+
 export interface OpenFootballMatch {
   round: string;
   date: string;
   time?: string;
   team1: string;
   team2: string;
-  score?: OpenFootballScore;
+  score?: OpenFootballScore | OpenFootballScoreTuple;
   goals1?: OpenFootballGoal[];
   goals2?: OpenFootballGoal[];
   group?: string;
   ground?: string;
+  status?: string;
 }
 
 export interface OpenFootballWorldCup {
@@ -72,6 +76,7 @@ export interface ParsedMatch {
   goalsHome: GoalEvent[];
   goalsAway: GoalEvent[];
   played: boolean;
+  canceled: boolean;
   winner: string | null;
   order: number | null;
 }

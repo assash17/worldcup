@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import { MatchDetailPage } from "@/components/MatchDetailPage";
 import { getAllMatchIds } from "@/lib/openfootball/static-params";
 
-export async function generateStaticParams() {
+export function generateStaticParams() {
   return getAllMatchIds();
 }
 
